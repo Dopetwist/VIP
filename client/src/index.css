@@ -1,6 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+:root {
+    --font-inter: 'Inter', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+    --font-mono: 'Courier New', Courier, monospace;
+    --luxury-black: #0a0a0a;
+    --luxury-gold: #d4af37;
+    --luxury-gold-light: #e8d4a0;
+    --luxury-cream: #f5f1e8;
+    --luxury-beige: #e8dcc8;
+    --white: #fff;
+    --sub-text: #777;
+}
+
+.banner {
+    background: var(--luxury-black);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+}
+
+.tel, .socials {
+    display: flex;
+    align-items: center;
+}
+
+.tel {
+    gap: 0.5rem;
+}
+
+.logo-section {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo-section p {
+    text-transform: uppercase;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.07rem solid var(--sub-text);
+    padding: 1rem 5%;
+    background: var(--luxury-cream);
+}
+
+.nav-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.link {
+    font-family: var(--font-inter);
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--luxury-black);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.book-button {
+    background: var(--luxury-gold);
+    color: var(--luxury-black);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+}
+
+.hero-section {
+    background: var(--luxury-cream);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.hero-section h1 {
+    font-family: var(--font-playfair);
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-family: var(--font-inter);
+    font-size: 1.2rem;
+    color: var(--sub-text);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.hero-section span {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--luxury-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+button.shop-button {
+    background: var(--luxury-cream);
+    color: var(--luxury-black);
+    border: 0.07rem solid var(--sub-text);
+    padding: 0.8rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+}
+
+.services-section {
+    padding: 4rem 5%;
+    background: var(--white);
+}
+
+.service-header {
+    text-align: center;
+}
+
+.service-header span {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--luxury-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.service-header h2 {
+    font-family: var(--font-playfair);
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.service-card {
+    width: 400px;
+}
+
+.service-card figure {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 1rem;
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-family: var(--font-playfair);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--sub-text);
+    line-height: 1.3;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--luxury-gold);
+    text-decoration: none;
+    margin-top: 1rem;
 }
