@@ -4,8 +4,12 @@ function Logo() {
     return (
 
         <section>
-            <main>
+            <main className="logo-section">
+                <figure>
+                    <img src="/path/to/logo.png" alt="VIP Logo" />
+                </figure>
 
+                <p>Beauty Studio</p>
             </main>
         </section>
     )
