@@ -3,15 +3,15 @@ function Logo() {
     
     return (
 
-        <section>
-            <main className="logo-section">
-                <figure>
-                    <img src="/path/to/logo.png" alt="VIP Logo" />
-                </figure>
+        
+        <main className="logo-section">
+            <figure>
+                <img src="/path/to/logo.png" alt="VIP Logo" />
+            </figure>
 
-                <p>Beauty Studio</p>
-            </main>
-        </section>
+            <p>Beauty Studio</p>
+        </main>
+        
     )
 }
 

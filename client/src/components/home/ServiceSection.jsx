@@ -9,7 +9,7 @@ function ServiceSection() {
         <section className="services-section">
             <main>
                 <div className="service-header">
-                    <span>01 - services</span>
+                    <span className="section-span">01 - services</span>
                     <h2>Our Services</h2>
                     <p>Discover our range of luxury beauty treatments designed to enhance your natural beauty.</p>
                 </div>

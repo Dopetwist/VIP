@@ -22,6 +22,10 @@
     --sub-text: #777;
 }
 
+section {
+    padding: 4rem 5%;
+}
+
 .banner {
     background: var(--luxury-black);
     color: var(--white);
@@ -149,7 +153,6 @@ button.shop-button {
 }
 
 .services-section {
-    padding: 4rem 5%;
     background: var(--white);
 }
 
@@ -157,7 +160,7 @@ button.shop-button {
     text-align: center;
 }
 
-.service-header span {
+.section-span {
     font-family: var(--font-inter);
     font-size: 0.9rem;
     color: var(--luxury-gold);
@@ -169,7 +172,7 @@ button.shop-button {
 
 .service-header h2 {
     font-family: var(--font-playfair);
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     font-weight: 500;
     letter-spacing: 0.1rem;
     margin-bottom: 0.5rem;
@@ -185,7 +188,7 @@ button.shop-button {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .service-card {
@@ -300,10 +303,83 @@ button.shop-button {
 
 #service-time {
     width: fit-content;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
     margin: 1rem 0;
+}
+
+.why-section {
+    background: var(--luxury-cream);
+}
+
+.why-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.why-box {
+    padding: 2rem;
+}
+
+.why-box span {
+    font-size: 1.5rem;
+    font-family: var(--font-playfair);
+    font-style: italic;
+    color: var(--deep-gold);
+}
+
+.why-box h2,
+.booking-box h2 {
+    font-family: var(--font-playfair);
+    font-weight: 400;
+    margin: 3rem 0 1rem;
+}
+
+.why-box p,
+.booking-box p {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--sub-text);
+    line-height: 1.4;
+}
+
+.first-section {
+    border-right: 0.1rem solid var(--border);
+}
+
+.second-section {
+    border-left: 0.1rem solid var(--border);
+}
+
+.booking-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.booking-box {
+    text-align: center;
+}
+
+.booking-box h2 {
+    font-size: 1.2rem;
+}
+
+.booking-box span {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    font-family: var(--font-playfair);
+    font-style: italic;
+    color: var(--luxury-gold);
+    border: 0.1rem solid var(--luxury-gold);
+    border-radius: 50%;
+    padding: 0.5rem;
 }
