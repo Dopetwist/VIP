@@ -1,5 +1,6 @@
 import {  HashLink } from "react-router-hash-link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
+import services from "../../data/services";
 
 function ServiceSection() {
     
@@ -49,6 +50,26 @@ function ServiceSection() {
                             View Nail Services <ArrowRight size={16} />
                         </HashLink>
                     </div>
+                </div>
+
+                <div className="service-lists">
+                    {services.map(service => (
+                        <div key={service.id} className="service-list-item">
+                            <div className="name-box">
+                                <h4>{service.name}</h4>
+                                <p id="service-price">${service.price}</p>
+                            </div>
+                            <p>{service.description}</p>
+                            <p id="service-time"><Clock size={16} /> {service.time} min</p>
+
+                            <button 
+                            type="button" 
+                            className="service-book-btn"
+                            >
+                                Book Now
+                            </button>
+                        </div>
+                    ))}
                 </div>
             </main>
         </section>
