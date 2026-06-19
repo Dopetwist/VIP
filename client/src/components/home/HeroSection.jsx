@@ -4,25 +4,25 @@ function HeroSection() {
     
     return (
 
-        <section>
-            <main className="hero-section">
-                <span>The Art of Personal Care</span>
+        
+        <main className="hero-section">
+            <span>The Art of Personal Care</span>
 
-                <h1>Elevate Your Natural Beauty</h1>
+            <h1>Elevate Your Natural Beauty</h1>
 
-                <p>Experience luxury beauty treatments at VIP Beauty Studio. From stunning lash extensions to flawless permanent makeup and exquisite nail art.</p>
+            <p>Experience luxury beauty treatments at VIP Beauty Studio. From stunning lash extensions to flawless permanent makeup and exquisite nail art.</p>
 
-                <div className="hero-buttons">
-                    <button className="book-button">
-                        Book Appointment
-                    </button>
+            <div className="hero-buttons">
+                <button className="book-button">
+                    Book Appointment
+                </button>
 
-                    <button className="shop-button">
-                        Shop Hair Products
-                    </button>
-                </div>
-            </main>
-        </section>
+                <button className="shop-button">
+                    Shop Hair Products
+                </button>
+            </div>
+        </main>
+        
     )
 }
 

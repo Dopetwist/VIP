@@ -6,16 +6,15 @@ function NavIcons() {
     
     return (
 
-        <section>
-            <main className="nav-icon-container">
-                <div className="nav-icons">
-                    <ShoppingCart className="nav-icon" />
-                    <User className="nav-icon" />
-                </div>
+        <main className="nav-icon-container">
+            <div className="nav-icons">
+                <ShoppingCart className="nav-icon" />
+                <User className="nav-icon" />
+            </div>
 
-                <BookButton />
-            </main>
-        </section>
+            <BookButton />
+        </main>
+        
     )
 }
 
