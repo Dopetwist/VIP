@@ -529,3 +529,186 @@ button.shop-button {
     justify-content: center;
     align-items: center;
 }
+
+.testimonial-section {
+    background: var(--luxury-black);
+}
+
+.testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    margin-top: 4rem;
+}
+
+.testimonial-card {
+    padding: 2rem;
+    border-left: 0.07rem solid #555;
+}
+
+.testimonial-card .quote {
+    color: var(--white);
+    font-family: var(--font-playfair);
+    font-size: 1.1rem;
+    font-style: italic;
+    letter-spacing: 0.02rem;
+    margin: 2rem 0;
+}
+
+.testimonial-card span {
+    color: var(--luxury-gold);
+}
+
+.testimonial-card .client-name {
+    font-family: var(--font-inter);
+    font-size: 0.8rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.02rem;
+    margin-bottom: 0.2rem;
+}
+
+.testimonial-card .client-service {
+    font-family: var(--font-inter);
+    font-size: 0.8rem;
+    color: var(--sub-text);
+    letter-spacing: 0.02rem;
+}
+
+.in-their-words {
+    color: var(--white);
+}
+
+.cta-section {
+    background: var(--luxury-cream);
+}
+
+.cta-section main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.cta-container {
+    text-align: center;
+}
+
+.cta-container h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+}
+
+.cta-container h1 span {
+    font-style: italic;
+}
+
+.cta-container p {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    color: var(--sub-text);
+    margin: 2rem 0;
+}
+
+.cta-container button {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    background-color: var(--luxury-black);
+    color: var(--white);
+    border: none;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    letter-spacing: 0.05rem;
+    transition: .2s ease;
+}
+
+.cta-container button:hover {
+    cursor: pointer;
+    background-color: #0a0a0ae5;
+}
+
+footer {
+    width: 100%;
+    background: var(--luxury-black);
+    color: var(--white);
+    padding: 3rem 5%;
+}
+
+footer p,
+.anchor-link {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    width: 30%;
+}
+
+.footer-logo figure,
+.footer-logo h2 {
+    margin-bottom: 1rem;
+}
+
+.footer-logo h2 {
+    font-family: var(--font-playfair);
+    font-size: 1.3rem;
+    color: var(--luxury-gold);
+    letter-spacing: 0.07rem;
+}
+
+.footer-logo p {
+    line-height: 1.5;
+}
+
+.footer-links {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-link-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-link-box h3 {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1rem;
+}
+
+.footer-link-box .anchor-link {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer-link-box .anchor-link:hover {
+    cursor: pointer;
+    color: var(--luxury-gold);
+}
+
+.footer-contact-p {
+    line-height: 1.7;
+}
+
+.copyright-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.07rem solid #555;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+.copyright-section p {
+    font-size: 0.9rem;
+}

@@ -7,6 +7,8 @@ import WhyChoose from "../components/home/WhyChoose";
 import BookingSteps from "../components/home/BookingSteps";
 import FeaturedProducts from "../components/home/FeaturedProducts";
 import BeforeAfter from "../components/ui/BeforeAfter";
+import Testimonials from "../components/home/Testimonials";
+import CTA from "../components/home/CTA";
 
 function HomePage() {
     
@@ -21,6 +23,8 @@ function HomePage() {
             <BookingSteps />
             <FeaturedProducts />
             <BeforeAfter />
+            <Testimonials />
+            <CTA />
             <Footer />
         </main>
     )
