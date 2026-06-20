@@ -1,4 +1,12 @@
 
+const testimonials = [
+    {
+        id: 1,
+        quote: "",
+        name: ""
+    }
+]
+
 function Testimonials() {
     
     return (

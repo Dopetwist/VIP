@@ -5,6 +5,8 @@ import ServiceSection from "../components/home/ServiceSection";
 import Footer from "../components/layout/Footer";
 import WhyChoose from "../components/home/WhyChoose";
 import BookingSteps from "../components/home/BookingSteps";
+import FeaturedProducts from "../components/home/FeaturedProducts";
+import BeforeAfter from "../components/ui/BeforeAfter";
 
 function HomePage() {
     
@@ -17,6 +19,8 @@ function HomePage() {
             <ServiceSection />
             <WhyChoose />
             <BookingSteps />
+            <FeaturedProducts />
+            <BeforeAfter />
             <Footer />
         </main>
     )
