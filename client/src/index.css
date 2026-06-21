@@ -26,7 +26,16 @@ section {
     padding: 4rem 5%;
 }
 
+.site-top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
 .banner {
+    width: 100%;
     background: var(--luxury-black);
     color: var(--white);
     display: flex;
@@ -57,6 +66,7 @@ section {
 }
 
 .header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,12 +110,13 @@ section {
 
 .hero-section {
     background: var(--luxury-cream);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
+    text-align: center;
+    padding-top: 10%;
 }
 
 .hero-section h1 {
