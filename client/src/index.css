@@ -26,7 +26,16 @@ section {
     padding: 4rem 5%;
 }
 
+.site-top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
 .banner {
+    width: 100%;
     background: var(--luxury-black);
     color: var(--white);
     display: flex;
@@ -57,6 +66,7 @@ section {
 }
 
 .header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,12 +110,13 @@ section {
 
 .hero-section {
     background: var(--luxury-cream);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
+    text-align: center;
+    padding-top: 10%;
 }
 
 .hero-section h1 {
@@ -181,6 +192,14 @@ button.shop-button {
 .service-header p {
     font-family: var(--font-inter);
     color: var(--sub-text);
+}
+
+.services-main-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+    padding: 0 2rem 5rem;
 }
 
 .services-container {
@@ -290,6 +309,107 @@ button.shop-button {
     color: var(--luxury-black);
 }
 
+.service-page {
+    padding-top: 11%;
+}
+
+.service-category {
+    font-family: var(--font-inter);
+}
+
+#service-page-price {
+    font-family: var(--font-inter);
+    font-size: 1.3rem;
+    color: var(--luxury-gold);
+}
+
+.service-name {
+    font-weight: 500;
+    margin: 1.5rem 0 1rem;
+}
+
+.services-tab-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-tab {
+    width: fit-content;
+    background: var(--luxury-beige);
+    color: var(--luxury-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    border-radius: 2rem;
+    margin: 3rem 0;
+    padding: 0.3rem;
+}
+
+.services-tab button.active {
+  background: var(--white);
+}
+
+.service-tab-item {
+    background: transparent;
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--luxury-black);
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+.service-tab-item:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.7rem var(--secondary-color);
+}
+
+.buttons-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.buttons-box button {
+    width: 50%;
+}
+
+.buttons-box .service-book-btn {
+    background: var(--luxury-gold);
+    color: var(--luxury-black);
+    border: 0.09rem solid transparent;
+    border-radius: 0.5rem;
+    padding: 0.7rem 1rem;
+    transition: .2s ease;
+}
+
+.buttons-box .service-book-btn:hover {
+    cursor: pointer;
+    background: #d4af37bc;
+    border-color: var(--luxury-gold);
+}
+
+.buttons-box .service-details-btn {
+    font-family: var(--font-inter);
+    font-weight: 600;
+    background: var(--white);
+    color: var(--luxury-black);
+    border: 0.09rem solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.7rem 1rem;
+    transition: .2s ease;
+}
+
+.buttons-box .service-details-btn:hover {
+    cursor: pointer;
+    background: var(--luxury-gold);
+    border-color: var(--luxury-gold);
+}
+
 .name-box {
     display: flex;
     justify-content: space-between;
@@ -297,7 +417,8 @@ button.shop-button {
     margin-bottom: 1rem;
 }
 
-#service-price {
+#service-price,
+.service-category {
     font-size: 0.7rem;
     font-weight: 500;
     color: var(--luxury-gold);

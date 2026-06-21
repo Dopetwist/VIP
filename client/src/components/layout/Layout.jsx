@@ -1,13 +1,20 @@
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
 function Layout() {
     
     return (
 
-        <section>
-            <main>
+        <div>
+            <Header />
 
+            <main>
+                <Outlet />
             </main>
-        </section>
+
+            <Footer />
+        </div>
     )
 }
 

@@ -39,7 +39,7 @@ function Testimonials() {
 
                 <div className="testimonial-container">
                     {testimonials.map((client) => (
-                        <div className="testimonial-card">
+                        <div key={client.id} className="testimonial-card">
                             <span>★★★★★</span>
 
                             <p className="quote">"{client.quote}"</p>
