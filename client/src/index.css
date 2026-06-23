@@ -598,6 +598,12 @@ button.shop-button {
     color: var(--deep-gold);
 }
 
+.before-after-section {
+    background: var(--luxury-cream);
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
 .before-after-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -976,4 +982,78 @@ footer p,
 
 .sort select:hover {
     cursor: pointer;
+}
+
+.gallery-page {
+    padding-top: 11%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    padding: 0 5%;
+}
+
+.gallery-card {
+    height: 400px;
+    background: var(--white);
+    padding: 1rem;
+    border: 0.08rem solid var(--border);
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-card figure img {
+    transition: .5s ease;
+}
+
+.work-details {
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(0deg, var(--sub-text), transparent);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: .5s ease;
+}
+
+.work-details span {
+    width: fit-content;
+    font-family: var(--font-inter);
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: var(--white);
+    color: var(--luxury-black);
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.5rem;
+}
+
+.work-details h3 {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.work-details p {
+    font-family: var(--font-inter);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--border);
+}
+
+.gallery-card:hover .work-details {
+    top: 40%;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
 }
