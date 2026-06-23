@@ -8,7 +8,7 @@ function Banner() {
 
         <main className="banner">
             <div className="tel">
-                <Phone />
+                <Phone size={16} />
                 <p>(555) 123-4567</p>
             </div>
 

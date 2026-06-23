@@ -53,6 +53,11 @@ section {
     gap: 0.5rem;
 }
 
+.tel p {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+}
+
 .logo-section {
     width: fit-content;
     display: flex;
@@ -62,6 +67,8 @@ section {
 }
 
 .logo-section p {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
     text-transform: uppercase;
 }
 
