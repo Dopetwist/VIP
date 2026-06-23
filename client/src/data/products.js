@@ -7,7 +7,8 @@ const products = [
         image: "/path/to/image.png",
         price: 89.99,
         rating: 4,
-        reviews: 124
+        reviews: 124,
+        createdAt: "2026-06-01"
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ const products = [
         image: "/path/to/image.png",
         price: 45.99,
         rating: 5,
-        reviews: 256
+        reviews: 256,
+        createdAt: "2026-06-05"
     },
     {
         id: 3,
@@ -27,7 +29,8 @@ const products = [
         image: "/path/to/image.png",
         price: 32.99,
         rating: 4,
-        reviews: 89
+        reviews: 89,
+        createdAt: "2026-06-10"
     },
     {
         id: 4,
@@ -37,7 +40,8 @@ const products = [
         image: "/path/to/image.png",
         price: 34.99,
         rating: 4,
-        reviews: 102
+        reviews: 102,
+        createdAt: "2026-06-15"
     },
     {
         id: 5,
@@ -47,7 +51,8 @@ const products = [
         image: "/path/to/image.png",
         price: 28.99,
         rating: 5,
-        reviews: 67
+        reviews: 67,
+        createdAt: "2026-06-12"
     },
     {
         id: 6,
@@ -57,7 +62,8 @@ const products = [
         image: "/path/to/image.png",
         price: 150,
         rating: 4,
-        reviews: 124
+        reviews: 137,
+        createdAt: "2026-05-25"
     },
     {
         id: 7,
@@ -67,7 +73,8 @@ const products = [
         image: "/path/to/image.png",
         price: 52.99,
         rating: 5,
-        reviews: 178
+        reviews: 178,
+        createdAt: "2026-04-30"
     },
     {
         id: 8,
@@ -77,7 +84,8 @@ const products = [
         image: "/path/to/image.png",
         price: 48.00,
         rating: 4,
-        reviews: 73
+        reviews: 73,
+        createdAt: "2026-04-25"
     },
     {
         id: 9,
@@ -87,7 +95,8 @@ const products = [
         image: "/path/to/image.png",
         price: 35.00,
         rating: 5,
-        reviews: 283
+        reviews: 283,
+        createdAt: "2026-06-20"
     },
     {
         id: 10,
@@ -97,7 +106,8 @@ const products = [
         image: "/path/to/image.png",
         price: 62.99,
         rating: 4,
-        reviews: 56
+        reviews: 39,
+        createdAt: "2026-06-15"
     },
     {
         id: 11,
@@ -107,7 +117,8 @@ const products = [
         image: "/path/to/image.png",
         price: 41.00,
         rating: 4,
-        reviews: 121
+        reviews: 121,
+        createdAt: "2026-05-08"
     }
 ];
 

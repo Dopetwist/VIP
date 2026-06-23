@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Routes, Route } from 'react-router';
+import products from './data/products';
 import HomePage from './pages/HomePage';
 import ServicePage from './pages/ServicePage';
 import BookingPage from './pages/BookingPage';
@@ -11,6 +12,25 @@ import Layout from './components/layout/Layout';
 
 function App() {
 
+  const [ filters, setFilters ] = useState({
+    categories: []
+  });
+
+  const allProducts = products;
+
+  // FILTER PRODUCTS
+  const filteredProducts = useMemo(
+    () =>
+      allProducts.filter((product) => {
+        const categoryMatch =
+          filters.categories.length === 0 ||
+          filters.categories.includes(product.category);
+
+        return categoryMatch;
+      }),
+    [allProducts, filters]
+  );
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -18,7 +38,7 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/services" element={<ServicePage />} />
         <Route path="/book" element={<BookingPage />} />
-        <Route path="/shop" element={<ShopPage />} />
+        <Route path="/shop" element={<ShopPage filteredProducts={filteredProducts} />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
