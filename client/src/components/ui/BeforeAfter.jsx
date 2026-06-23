@@ -1,12 +1,16 @@
+import { useLocation } from "react-router";
 
 function BeforeAfter() {
+
+    const location = useLocation();
     
     return (
 
         <section>
-            <main>
+            <main className={`${location.pathname === "/gallery" ? "before-after-section" : ""}`}>
                 <div className="service-header">
-                    <span className="section-span">05 - The Gallery</span>
+                    {location.pathname === "/" && <span className="section-span">05 - The Gallery</span>}
+
                     <h2>Before & After</h2>
                     <p>See the stunning transformations our expert team creates</p>
                 </div>

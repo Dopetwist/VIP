@@ -1,13 +1,17 @@
+import ProductCard from "./ProductCard";
 
-function ProductGrid() {
+function ProductGrid({ products }) {
     
     return (
 
-        <section>
-            <main>
-
-            </main>
-        </section>
+        <div className="product-grid">
+            {products.map((p) => (
+                <ProductCard
+                    key={p.id}
+                    product={p}
+                />
+            ))}
+        </div>
     )
 }
 
