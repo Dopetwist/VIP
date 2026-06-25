@@ -1,3 +1,4 @@
+import Certified from "../components/ui/Certified";
 import OurValues from "../components/ui/OurValues";
 
 
@@ -22,6 +23,7 @@ function AboutPage() {
             </div>
 
             <OurValues />
+            <Certified />
         </div>
     )
 }
