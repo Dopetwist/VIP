@@ -189,10 +189,10 @@ button.shop-button {
 }
 
 .service-header h2 {
-    font-family: var(--font-playfair);
-    font-size: 2.9rem;
+    font-family: var(--font-inter);
+    font-size: 2.8rem;
     font-weight: 500;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
     margin-bottom: 0.5rem;
 }
 
@@ -898,6 +898,213 @@ footer p,
 
 .product-card figure img:hover {
     transform: scale(1.02);
+}
+
+.contact-page {
+    padding-top: 11%;
+}
+
+.contact-header {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.contact-header h2 {
+    font-family: var(--font-inter);
+    font-size: 2.8rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.contact-header p {
+    font-family: var(--font-inter);
+    color: var(--sub-text);
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: var(--white);
+    border: 0.08rem solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(10, 10, 10, 0.04);
+}
+
+.contact-card h3 {
+    font-family: var(--font-inter);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.contact-field {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.contact-field label {
+    font-family: var(--font-inter);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    color: var(--luxury-black);
+}
+
+.contact-input,
+.contact-textarea,
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    border: 0.08rem solid var(--border);
+    border-radius: 0.8rem;
+    background: var(--luxury-cream);
+    color: var(--luxury-black);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    outline: none;
+    border-color: var(--luxury-gold);
+    box-shadow: 0 0 0 0.15rem rgba(212, 175, 55, 0.15);
+}
+
+.contact-field textarea {
+    resize: vertical;
+}
+
+.contact-button {
+    width: fit-content;
+    background: var(--luxury-black);
+    color: var(--white);
+    border: none;
+    border-radius: 0.8rem;
+    padding: 1rem 2rem;
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+    background: var(--luxury-gold);
+    color: var(--luxury-black);
+    transform: translateY(-1px);
+}
+
+.contact-info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-details {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.contact-detail {
+    padding: 1.2rem 1.4rem;
+    border-radius: 0.9rem;
+    background: var(--luxury-cream);
+    border: 0.08rem solid var(--border);
+}
+
+.contact-detail-title {
+    font-family: var(--font-inter);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    margin-bottom: 0.6rem;
+    color: var(--luxury-black);
+}
+
+.contact-detail-text {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--sub-text);
+    line-height: 1.6;
+}
+
+.contact-map-card {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    padding: 2rem;
+    background: var(--white);
+    border: 0.08rem solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba(10, 10, 10, 0.04);
+}
+
+.contact-map-card h3 {
+    font-family: var(--font-inter);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-map {
+    width: 100%;
+    min-height: 360px;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 0.08rem solid var(--border);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    border: 0;
+}
+
+@media (max-width: 960px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-card {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .contact-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-card,
+    .contact-map-card {
+        padding: 1.5rem;
+    }
+
+    .contact-button {
+        width: 100%;
+        padding: 1rem 1.3rem;
+    }
 }
 
 .product-details {
