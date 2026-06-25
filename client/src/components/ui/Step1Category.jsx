@@ -1,24 +1,28 @@
 
-export default function Step1Service ({ data, updateBooking }) {
+export default function Step1Service () {
 
     return (
         <div>
 
-            <h2> Select Service </h2>
-                
-            <select
-                value={data.service}
-                onChange={(e) =>
-                    updateBooking(
-                        "service",
-                        e.target.value
-                    )
-                }
-            >
-                <option value=""> Choose </option>
-                <option value="Hair"> Hair Styling </option>
-                <option value="Makeup"> Makeup </option>
-            </select>
+            <div className="choose">
+                <h2>Choose Category</h2>
+
+                <div className="category-items-container">
+                    <div className="category-box">
+                        <p>Eye Lashes</p>
+                    </div>
+                    <div className="category-box">
+                        <p>Tattoos</p>
+                    </div>
+                    <div className="category-box">
+                        <p>Nails</p>
+                    </div>
+                    <div className="category-box">
+                        <p>Eye brows</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     );
 }

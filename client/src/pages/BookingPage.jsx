@@ -79,30 +79,39 @@ export default function BookingPage() {
     };
 
     return (
-        <div className="booking-container">
+        <div className="booking-section">
+            <div className="booking-page-container">
 
-            <BookingProgress currentStep={currentStep} />
+                <BookingProgress currentStep={currentStep} />
 
-            <div className="booking-content">
-                {steps[currentStep]}
+                <div className="step-count">
+                    <span>Step {currentStep} of 6</span>
+                </div>
+
+                <div className="booking-content">
+                    {steps[currentStep]}
+
+                    <div className="actions">
+                        {currentStep > 1 && (
+                            <button 
+                            className="back-btn"
+                            onClick={prevStep}
+                            >
+                                Back
+                            </button>
+                        )}
+
+                        {currentStep < 6 && (
+                            <button 
+                            className="continue-btn"
+                            onClick={nextStep}
+                            >
+                                Continue
+                            </button>
+                        )}
+                    </div>
+                </div>
             </div>
-
-            <div className="actions">
-
-                {currentStep > 1 && (
-                    <button onClick={prevStep}>
-                        Back
-                    </button>
-                )}
-
-                {currentStep < 6 && (
-                    <button onClick={nextStep}>
-                        Continue
-                    </button>
-                )}
-
-            </div>
-
         </div>
     );
 }

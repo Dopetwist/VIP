@@ -24,9 +24,6 @@ export default function BookingProgress({ currentStep }) {
             <div className="circle">
               {stepNumber}
             </div>
-
-            <span>{step}</span>
-
           </div>
         );
       })}
