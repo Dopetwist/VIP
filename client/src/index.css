@@ -103,6 +103,15 @@ section {
     letter-spacing: 0.05rem;
 }
 
+.link:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+.link.active {
+    color: var(--luxury-gold);
+}
+
 .book-button {
     background: var(--luxury-gold);
     color: var(--luxury-black);
