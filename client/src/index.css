@@ -1425,3 +1425,51 @@ footer p,
     color: var(--luxury-gold);
     line-height: 1.5;
 }
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background: #ddd;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: auto;
+
+  transition: .3s;
+}
+
+.active .circle {
+  background: #b96c6c;
+  color: white;
+}
+
+.booking-content {
+  min-height: 300px;
+}
+
+.actions {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 30px;
+}

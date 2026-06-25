@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router";
 
 function CTA() {
+
+    const navigate = useNavigate();
     
     return (
 
@@ -9,7 +12,11 @@ function CTA() {
                     <h1>Book your next <br /> <span>beauty session</span></h1>
                     <p>Reserve a private moment with our beauty experts.</p>
 
-                    <button>Reserve Now</button>
+                    <button
+                    onClick={() => navigate("/book")}
+                    >
+                        Reserve Now
+                    </button>
                 </div>
             </main>
         </section>
