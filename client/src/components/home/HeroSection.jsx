@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router";
 import BookButton from "../layout/BookButton";
 
 function HeroSection() {
+
+    const navigate = useNavigate();
     
     return (
-
         
         <main className="hero-section">
             <span>The Art of Personal Care</span>
@@ -13,11 +15,17 @@ function HeroSection() {
             <p>Experience luxury beauty treatments at VIP Beauty Studio. From stunning lash extensions to flawless permanent makeup and exquisite nail art.</p>
 
             <div className="hero-buttons">
-                <button className="book-button">
+                <button 
+                className="book-button"
+                onClick={() => navigate("/book")}
+                >
                     Book Appointment
                 </button>
 
-                <button className="shop-button">
+                <button 
+                className="shop-button"
+                onClick={() => navigate("/shop")}
+                >
                     Shop Hair Products
                 </button>
             </div>
