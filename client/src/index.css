@@ -1541,12 +1541,14 @@ footer p,
     border-radius: 0.5rem;
 }
 
-.category-box:hover {
+.category-box:hover,
+.service-box:hover {
     cursor: pointer;
     border-color: var(--luxury-gold);
 }
 
-.category-box.selected {
+.category-box.selected,
+.service-box.selected {
     border-color: var(--luxury-gold);
     background: #d4af3716;
 }
@@ -1565,4 +1567,10 @@ footer p,
     padding: 1.5rem 1rem;
     border: 0.1rem solid var(--border);
     border-radius: 0.5rem;
+}
+
+.select-days {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }

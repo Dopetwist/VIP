@@ -7,11 +7,26 @@ function Step2Service({ data, updateBooking }) {
   );
 
   return (
-    <div>
+    <div className="choose">
+      <h2>Choose Your Service</h2>
+
       <div className="filtered-services-container">
         {filteredServices.length > 0 ? (
           filteredServices.map((service) => (
-            <div key={service.id} className="service-box">
+            <div 
+            key={service.id} 
+            className={`service-box ${
+              data.service === service.name
+              ? "selected"
+              : ""
+            }`}
+            onClick={() =>
+              updateBooking(
+                "service",
+                service.name
+              )
+            }
+            >
               <p>{service.name}</p>
               <span>
                 <p>${service.price}</p>
