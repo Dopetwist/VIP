@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import BookingProgress from "../components/ui/BookingProgress";
 import Step1Category from "../components/ui/Step1Category";
@@ -19,6 +19,10 @@ export default function BookingPage() {
         time: "",
         info: ""
     });
+
+    useEffect(() => {
+        console.log(bookingData);
+    }, [bookingData]);
 
     const nextStep = () => {
         if (currentStep < 6) {

@@ -1540,3 +1540,37 @@ footer p,
     border: 0.1rem solid var(--border);
     border-radius: 0.5rem;
 }
+
+.category-box:hover,
+.service-box:hover {
+    cursor: pointer;
+    border-color: var(--luxury-gold);
+}
+
+.category-box.selected,
+.service-box.selected {
+    border-color: var(--luxury-gold);
+    background: #d4af3716;
+}
+
+.filtered-services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--white);
+    padding: 1.5rem 1rem;
+    border: 0.1rem solid var(--border);
+    border-radius: 0.5rem;
+}
+
+.select-days {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

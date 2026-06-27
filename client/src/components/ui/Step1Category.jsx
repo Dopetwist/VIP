@@ -1,28 +1,51 @@
 
-export default function Step1Service () {
+export default function Step1Category ({ data, updateBooking }) {
+
+    const categories = [
+        "Lashes",
+        "Tattoos",
+        "Nails",
+        "Eyebrows"
+    ];
 
     return (
         <div>
 
             <div className="choose">
+
                 <h2>Choose Category</h2>
 
                 <div className="category-items-container">
-                    <div className="category-box">
-                        <p>Eye Lashes</p>
-                    </div>
-                    <div className="category-box">
-                        <p>Tattoos</p>
-                    </div>
-                    <div className="category-box">
-                        <p>Nails</p>
-                    </div>
-                    <div className="category-box">
-                        <p>Eye brows</p>
-                    </div>
+
+                    {categories.map((category) => (
+
+                        <div
+                            key={category}
+
+                            className={`category-box ${
+                                data.category === category
+                                    ? "selected"
+                                    : ""
+                            }`}
+
+                            onClick={() =>
+                                updateBooking(
+                                    "category",
+                                    category
+                                )
+                            }
+                        >
+
+                            <p>{category}</p>
+
+                        </div>
+
+                    ))}
+
                 </div>
 
             </div>
+
         </div>
     );
 }
