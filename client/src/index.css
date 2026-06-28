@@ -1559,7 +1559,7 @@ footer p,
 .filtered-services-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.3rem;
 }
 
 .service-box {
@@ -1567,7 +1567,7 @@ footer p,
     align-items: center;
     gap: 1rem;
     background: var(--white);
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     border: 0.1rem solid var(--border);
     border-radius: 0.5rem;
 }
@@ -1582,8 +1582,8 @@ footer p,
     color: var(--sub-text);
 }
 
-.service-name {
-    font-size: 1rem;
+.service-box-name {
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
@@ -1603,10 +1603,89 @@ footer p,
     gap: 0.3rem;
 }
 
-.select-days {
+.select-days,
+.select-time {
     font-family: var(--font-inter);
     font-size: 1.1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.time-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.time-box {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    padding: 1.5rem 1rem;
+    border: 0.1rem solid var(--border);
+    border-radius: 0.5rem;
+}
+
+.time-box:hover {
+    cursor: pointer;
+    border-color: var(--luxury-gold);
+}
+
+.time-box p {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.time-box.booked {
+    cursor: not-allowed;
+    color: var(--sub-text);
+    border: 0.09rem solid var(--border);
+}
+
+.time-box.selected {
+    border-color: var(--luxury-gold);
+    background: #d4af3716;
+}
+
+.booked-span {
+    color: #999;
+    font-size: 0.7rem;
+    margin-left: 0.3rem;
+}
+
+.info-container h2 {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-container .input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.info-container .input-box label {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.info-container .input-box input {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    background: #95722634;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    outline-color: var(--luxury-gold);
 }

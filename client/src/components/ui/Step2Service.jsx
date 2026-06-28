@@ -28,7 +28,7 @@ function Step2Service({ data, updateBooking }) {
               )
             }
             >
-              <p className="service-name">{service.name}</p>
+              <p className="service-box-name">{service.name}</p>
               <span>
                 <p className="service-price">${service.price}</p>
               </span>

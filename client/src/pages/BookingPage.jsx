@@ -17,7 +17,11 @@ export default function BookingPage() {
         service: "",
         date: "",
         time: "",
-        info: ""
+        info: {
+            fullName: "",
+            email: "",
+            phone: ""
+        }
     });
 
     useEffect(() => {
