@@ -1,8 +1,61 @@
 
-function Step5Info() {
+function Step5Info({ data, updateBooking }) {
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    updateBooking(
+      "info",
+      {
+        ...data.info,
+        [name]: value
+      }
+    );
+  }
+
   return (
     <div>
+      <div className="info-container">
 
+        <h2>Your Information</h2>
+
+        <form>
+          <div className="input-box">
+            <label htmlFor="name">Full Name</label>
+            <input 
+              type="text" 
+              name="fullName" 
+              id="name" 
+              value={data.info?.fullName || ""}
+              onChange={handleChange}
+              placeholder="Enter your full name" 
+            />
+          </div>
+          <div className="input-box">
+            <label htmlFor="email">Email Address</label>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              value={data.info?.email || ""}
+              onChange={handleChange}
+              placeholder="your.email@example.com" 
+            />
+          </div>
+          <div className="input-box">
+            <label htmlFor="phone">Phone Number</label>
+            <input 
+              type="tel" 
+              name="phone" 
+              id="phone" 
+              value={data.info?.phone || ""}
+              onChange={handleChange} 
+              placeholder="+234 123 456 7890" 
+            />
+          </div>
+        </form>
+
+      </div>
     </div>
   )
 }

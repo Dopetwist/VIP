@@ -1,3 +1,4 @@
+import { Clock } from "lucide-react";
 import services from "../../data/services";
 
 function Step2Service({ data, updateBooking }) {
@@ -27,14 +28,14 @@ function Step2Service({ data, updateBooking }) {
               )
             }
             >
-              <p>{service.name}</p>
+              <p className="service-box-name">{service.name}</p>
               <span>
-                <p>${service.price}</p>
+                <p className="service-price">${service.price}</p>
               </span>
 
-              <p>{service.description}</p>
+              <p className="service-description">{service.description}</p>
 
-              <p>{service.time}</p>
+              <p className="service-time"><Clock size={16} />{service.time} minutes</p>
             </div>
           ))
         ) : (
