@@ -1452,6 +1452,11 @@ footer p,
 }
 
 .active .circle {
+    background: var(--luxury-black);
+    color: var(--white);
+}
+
+.passed .circle {
     background: var(--luxury-gold);
     color: var(--luxury-black);
 }
@@ -1464,7 +1469,7 @@ footer p,
 }
 
 .booking-page-container {
-    width: 70%;
+    width: 60%;
 }
 
 .booking-content {
@@ -1483,7 +1488,7 @@ footer p,
 .actions button {
     width: 100%;
     font-family: var(--font-inter);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--luxury-black);
     padding: 0.5rem 0;
@@ -1491,12 +1496,14 @@ footer p,
     transition: .2s ease;
 }
 
-.actions button.continue-btn {
+.actions button.continue-btn,
+.actions button.confirm-btn {
     background: var(--luxury-gold);
     border: none;
 }
 
-.actions button.continue-btn:hover {
+.actions button.continue-btn:hover,
+.actions button.confirm-btn:hover {
     cursor: pointer;
     background: #d4af37c7;
 }
@@ -1532,7 +1539,7 @@ footer p,
 
 .category-items-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 1rem;
 }
 
@@ -1688,4 +1695,72 @@ footer p,
     border: none;
     border-radius: 0.3rem;
     outline-color: var(--luxury-gold);
+}
+
+.review-section h2 {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+}
+
+.review-container {
+    margin-top: 1rem;
+}
+
+.review-box {
+    padding: 1rem 0;
+    border-bottom: 0.09rem solid var(--border);
+}
+
+.review-box p {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+}
+
+.review-box span {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--sub-text);
+}
+
+.review-box .main-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
+}
+
+.review-box .full-name {
+    margin-bottom: 0.3rem;
+}
+
+.review-box .sub-text {
+    color: var(--sub-text);
+    margin-bottom: 0.3rem;
+}
+
+.review-total {
+    margin-top: 2rem;
+}
+
+.review-total p {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--sub-text);
+}
+
+.review-total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-total-box h3 {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+}
+
+.review-total-box p {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    color: var(--luxury-gold);
 }

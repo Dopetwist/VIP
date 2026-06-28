@@ -1,3 +1,4 @@
+import { Check } from "lucide-react";
 
 export default function BookingProgress({ currentStep }) {
 
@@ -19,10 +20,13 @@ export default function BookingProgress({ currentStep }) {
         return (
           <div
             key={step}
-            className={`step ${currentStep >= stepNumber ? "active" : ""}`}
+            className={`step 
+              ${currentStep === stepNumber ? "active" : ""}
+              ${currentStep > stepNumber ? "passed" : ""}
+            `}
           >
             <div className="circle">
-              {stepNumber}
+              {currentStep > stepNumber ? <Check size={18} /> : stepNumber}
             </div>
           </div>
         );
