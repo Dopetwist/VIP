@@ -1524,6 +1524,9 @@ footer p,
 }
 
 .choose h2 {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 2rem;
 }
 
@@ -1569,7 +1572,40 @@ footer p,
     border-radius: 0.5rem;
 }
 
+.service-box p {
+    font-family: var(--font-inter);
+}
+
+.service-description,
+.service-time {
+    font-size: 0.9rem;
+    color: var(--sub-text);
+}
+
+.service-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.service-price {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--luxury-gold);
+    border: 0.08rem solid var(--luxury-gold);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+}
+
+.service-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+}
+
 .select-days {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
