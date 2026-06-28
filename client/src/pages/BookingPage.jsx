@@ -117,6 +117,14 @@ export default function BookingPage() {
                                 Continue
                             </button>
                         )}
+
+                        {currentStep === 6 && (
+                            <button 
+                            className="confirm-btn"
+                            >
+                                Confirm Booking
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>
