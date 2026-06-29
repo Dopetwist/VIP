@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 import BookingProgress from "../components/ui/BookingProgress";
 import Step1Category from "../components/ui/Step1Category";
@@ -8,7 +9,10 @@ import Step4Time from "../components/ui/Step4Time";
 import Step5Info from "../components/ui/Step5Info";
 import Step6Review from "../components/ui/Step6Review";
 
+
 export default function BookingPage() {
+
+    const navigate = useNavigate();
 
     const [ currentStep, setCurrentStep ] = useState(1);
 
@@ -23,10 +27,6 @@ export default function BookingPage() {
             phone: ""
         }
     });
-
-    useEffect(() => {
-        console.log(bookingData);
-    }, [bookingData]);
 
     const nextStep = () => {
         if (currentStep < 6) {
@@ -121,6 +121,7 @@ export default function BookingPage() {
                         {currentStep === 6 && (
                             <button 
                             className="confirm-btn"
+                            onClick={() => navigate("/dashboard")}
                             >
                                 Confirm Booking
                             </button>

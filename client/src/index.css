@@ -1764,3 +1764,441 @@ footer p,
     font-size: 1.1rem;
     color: var(--luxury-gold);
 }
+
+.dashboard-page {
+    padding: 11% 5% 5rem;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--luxury-cream) 0%, var(--white) 100%);
+}
+
+.dashboard-main {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.dashboard-sidebar {
+    width: 20rem;
+    position: sticky;
+    top: 7rem;
+}
+
+.account-container {
+    width: 100%;
+    padding: 1.25rem;
+    border: 0.1rem solid var(--border);
+    border-radius: 1rem;
+    background: var(--white);
+    box-shadow: 0 0.8rem 2rem rgba(10, 10, 10, 0.06);
+}
+
+.account-hero {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.06rem solid var(--border);
+}
+
+.account-avatar {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--luxury-gold), var(--deep-gold));
+    color: var(--luxury-black);
+    font-weight: 700;
+}
+
+.account-hero h2 {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.account-hero p {
+    font-family: var(--font-inter);
+    font-size: 0.85rem;
+    color: var(--sub-text);
+}
+
+.dashboard-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+}
+
+.sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border: none;
+    border-radius: 0.8rem;
+    background: transparent;
+    color: var(--luxury-black);
+    cursor: pointer;
+    padding: 0.75rem 0.9rem;
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    text-align: left;
+    transition: 0.2s ease;
+}
+
+.sidebar-nav-item:hover,
+.sidebar-nav-item.active {
+    background: var(--luxury-cream);
+    color: var(--deep-gold);
+}
+
+.sidebar-nav-item.logout {
+    margin-top: 0.5rem;
+    color: var(--luxury-black);
+}
+
+.dashboard-content-panel {
+    flex: 1;
+    min-width: 0;
+}
+
+.panel-card,
+.dashboard-overview-card {
+    padding: 1.4rem;
+    border: 0.1rem solid var(--border);
+    border-radius: 1rem;
+    background: var(--white);
+    box-shadow: 0 0.8rem 2rem rgba(10, 10, 10, 0.06);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.panel-header h2,
+.panel-card h2,
+.dashboard-overview-card h2 {
+    font-family: var(--font-inter);
+    font-size: 1.35rem;
+    margin-top: 0.2rem;
+}
+
+.section-eyebrow {
+    font-family: var(--font-inter);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16rem;
+    color: var(--luxury-gold);
+}
+
+.status-pill {
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: var(--luxury-cream);
+    color: var(--deep-gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.primary-button,
+.secondary-button,
+.quick-actions-buttons button,
+.need-help button {
+    border: none;
+    border-radius: 0.8rem;
+    padding: 0.7rem 1rem;
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-button,
+.quick-actions-buttons button,
+.need-help button {
+    background: var(--luxury-gold);
+    color: var(--luxury-black);
+}
+
+.secondary-button {
+    background: var(--luxury-cream);
+    color: var(--luxury-black);
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.quick-actions-buttons button:hover,
+.need-help button:hover {
+    transform: translateY(-1px);
+}
+
+.dashboard-overview-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.overview-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border: 0.08rem solid var(--border);
+    border-radius: 1rem;
+    background: var(--luxury-cream);
+}
+
+.overview-icon {
+    display: grid;
+    place-items: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 0.8rem;
+    background: var(--white);
+    color: var(--deep-gold);
+}
+
+.overview-text p {
+    font-family: var(--font-inter);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--luxury-black);
+}
+
+.overview-text span {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--sub-text);
+}
+
+.overview-below {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.quick-actions,
+.need-help {
+    height: 100%;
+    padding: 1rem;
+    border: 0.08rem solid var(--border);
+    border-radius: 1rem;
+    background: var(--luxury-cream);
+}
+
+.quick-actions h3,
+.need-help h3 {
+    font-family: var(--font-inter);
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+}
+
+.quick-actions-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.need-help p,
+.panel-copy,
+.appointment-note,
+.order-details p {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    color: var(--sub-text);
+    line-height: 1.6;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.profile-summary-card {
+    padding: 1rem;
+    border: 0.08rem solid var(--border);
+    border-radius: 1rem;
+    background: var(--luxury-cream);
+}
+
+.profile-summary-card h3 {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.profile-summary-card p {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    color: var(--sub-text);
+    margin-bottom: 0.35rem;
+}
+
+.profile-form {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.profile-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--luxury-black);
+}
+
+.profile-form input {
+    border: 0.08rem solid var(--border);
+    border-radius: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    font-family: var(--font-inter);
+}
+
+.form-actions,
+.order-section-buttons,
+.apt-second-section {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.appointment-tab-container {
+    margin-bottom: 1rem;
+}
+
+.appointment-tab {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.appointment-tab-item {
+    padding: 0.55rem 0.85rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    background: var(--luxury-cream);
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--luxury-black);
+}
+
+.appointment-tab-item.active {
+    background: var(--luxury-gold);
+    color: var(--luxury-black);
+}
+
+.appointment-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    border: 0.08rem solid var(--border);
+    border-radius: 1rem;
+    background: var(--luxury-cream);
+}
+
+.apt-service-name h3 {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.apt-service-name span {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--deep-gold);
+    font-size: 0.75rem;
+}
+
+.apt-first-section p {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    color: var(--sub-text);
+    margin-top: 0.45rem;
+}
+
+.apt-price {
+    margin-top: 1rem;
+    font-family: var(--font-inter);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--deep-gold);
+}
+
+.orders-summary {
+    display: grid;
+    gap: 1rem;
+}
+
+.order-item {
+    padding: 1rem;
+    border: 0.08rem solid var(--border);
+    border-radius: 1rem;
+    background: var(--luxury-cream);
+}
+
+.first-order,
+.second-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.order-status {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.order-status.delivered {
+    background: #e8f6ea;
+    color: #1f7a3f;
+}
+
+.order-status.shipped {
+    background: #fef4d8;
+    color: #9a6b00;
+}
+
+@media (max-width: 960px) {
+    .dashboard-main {
+        flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .dashboard-overview-container,
+    .overview-below,
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .dashboard-page {
+        padding: 14% 1rem 3rem;
+    }
+
+    .panel-header,
+    .appointment-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
