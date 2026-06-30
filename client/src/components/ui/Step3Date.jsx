@@ -13,18 +13,25 @@ function Step3Date({ data, updateBooking }) {
     today.getDate()
   );
 
-  const [date, setDate] = useState(
-    data?.date ? new Date(data.date) : startOfToday
-  );
+  // Parse date string (YYYY-MM-DD format) or use startOfToday
+  const parseStoredDate = (dateString) => {
+    if (!dateString) return startOfToday;
+    const parsed = new Date(dateString);
+    return isNaN(parsed.getTime()) ? startOfToday : parsed;
+  };
+
+  const [date, setDate] = useState(parseStoredDate(data?.date));
 
   function handleDateChange(nextDate) {
     setDate(nextDate);
 
     if (typeof updateBooking === 'function') {
       try {
+        // Store as YYYY-MM-DD format for clean storage and display
+        const formattedDate = nextDate.toISOString().split('T')[0];
         updateBooking(
           "date",
-          nextDate
+          formattedDate
         );
       } catch (e) {
         // swallow errors to avoid breaking consumer
@@ -33,6 +40,18 @@ function Step3Date({ data, updateBooking }) {
       }
     }
   }
+
+  // Format date for display (e.g., "Monday, January 1, 2024")
+  const formatDateForDisplay = (dateString) => {
+    if (!dateString) return 'Not selected';
+    const date = new Date(dateString + 'T00:00:00');
+    return date.toLocaleDateString('en-US', { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
 
   return (
     <div className="date-section">
@@ -51,7 +70,7 @@ function Step3Date({ data, updateBooking }) {
             className="vip-calendar"
           />
 
-          <p className="selected">Selected Date: {date.toDateString()}</p>
+          <p className="selected">Selected Date: {formatDateForDisplay(data?.date || date.toISOString().split('T')[0])}</p>
         </div>
       </div>
     </div>
