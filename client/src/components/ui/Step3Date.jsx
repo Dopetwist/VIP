@@ -13,10 +13,12 @@ function Step3Date({ data, updateBooking }) {
     today.getDate()
   );
 
-  // Parse date string (YYYY-MM-DD format) or use startOfToday
+  // Parse date string (YYYY-MM-DD format) in local timezone
   const parseStoredDate = (dateString) => {
     if (!dateString) return startOfToday;
-    const parsed = new Date(dateString);
+    const [year, month, day] = dateString.split('-');
+    if (!year || !month || !day) return startOfToday;
+    const parsed = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     return isNaN(parsed.getTime()) ? startOfToday : parsed;
   };
 
@@ -27,8 +29,11 @@ function Step3Date({ data, updateBooking }) {
 
     if (typeof updateBooking === 'function') {
       try {
-        // Store as YYYY-MM-DD format for clean storage and display
-        const formattedDate = nextDate.toISOString().split('T')[0];
+        // Store as YYYY-MM-DD format in local timezone (not UTC)
+        const year = nextDate.getFullYear();
+        const month = String(nextDate.getMonth() + 1).padStart(2, '0');
+        const day = String(nextDate.getDate()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}`;
         updateBooking(
           "date",
           formattedDate
@@ -53,6 +58,17 @@ function Step3Date({ data, updateBooking }) {
     });
   };
 
+  // Format Date object for display
+  const formatDateObjectForDisplay = (dateObj) => {
+    if (!dateObj) return 'Not selected';
+    return dateObj.toLocaleDateString('en-US', { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
+
   return (
     <div className="date-section">
       <h2 className="select-days"><CalendarDays /> Select Date</h2>
@@ -70,7 +86,7 @@ function Step3Date({ data, updateBooking }) {
             className="vip-calendar"
           />
 
-          <p className="selected">Selected Date: {formatDateForDisplay(data?.date || date.toISOString().split('T')[0])}</p>
+          <p className="selected">Selected Date: {data?.date ? formatDateForDisplay(data.date) : formatDateObjectForDisplay(date)}</p>
         </div>
       </div>
     </div>
