@@ -1,4 +1,9 @@
 function ContactPage() {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <section className="contact-page">
             <div className="contact-header">
@@ -14,7 +19,8 @@ function ContactPage() {
             <div className="contact-container">
                 <div className="contact-card contact-form-card">
                     <h3>Contact Form</h3>
-                    <form className="contact-form">
+                    
+                    <form onSubmit={handleSubmit} className="contact-form">
                         <div className="contact-field">
                             <label htmlFor="name">Name</label>
                             <input id="name" type="text" placeholder="Your full name" />

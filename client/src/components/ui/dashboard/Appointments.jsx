@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { Calendar, Clock, MapPin } from "lucide-react";
 
 
 export default function Appointments({ data = {} }) {
+
+    const navigate = useNavigate();
 
     const safeData = {
         service: data.service || "No service selected",
@@ -64,7 +67,13 @@ export default function Appointments({ data = {} }) {
                     <p className="section-eyebrow">Schedule</p>
                     <h2>My Appointments</h2>
                 </div>
-                <button type="button" className="primary-button">Book New</button>
+                <button 
+                type="button" 
+                className="primary-button"
+                onClick={() => navigate("/book")}
+                >
+                    Book New
+                </button>
             </div>
 
             <div className="appointment-tab-container">
@@ -76,7 +85,7 @@ export default function Appointments({ data = {} }) {
                             type="button"
                             onClick={() => setActiveTab(apt)}
                         >
-                            {apt}
+                            {apt} (1)
                         </button>
                     ))}
                 </div>
@@ -97,8 +106,22 @@ export default function Appointments({ data = {} }) {
                     <p className="appointment-note">{selectedAppointment.note}</p>
                 </div>
                 <div className="apt-second-section">
-                    <button type="button" className="secondary-button">Reschedule</button>
-                    <button type="button" className="primary-button">Manage</button>
+                    {activeTab === "Upcoming" && (
+                        <>
+                            <button type="button" className="secondary-button" id="reschedule">Reschedule</button>
+                            <button type="button" className="primary-button" id="cancel">Cancel</button>
+                        </>
+                    )}
+
+                    {(activeTab === "Completed" || activeTab === "Cancelled") && (
+                        <button 
+                        type="button" 
+                        className="book-again-button"
+                        onClick={() => navigate("/book")}
+                        >
+                            Book again
+                        </button>
+                    )}
                 </div>
             </div>
 

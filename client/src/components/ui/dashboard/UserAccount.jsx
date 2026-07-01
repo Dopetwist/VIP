@@ -8,6 +8,7 @@ const menuItems = [
 ];
 
 export default function UserAccount({ activeView, onNavigate }) {
+
     return (
         <aside className="dashboard-sidebar">
             <div className="account-container">
@@ -35,7 +36,11 @@ export default function UserAccount({ activeView, onNavigate }) {
                         );
                     })}
 
-                    <button type="button" className="sidebar-nav-item logout" onClick={() => onNavigate("overview")}>
+                    <button 
+                    type="button" 
+                    className="sidebar-nav-item logout" 
+                    onClick={() => window.location.href = "/"}
+                    >
                         <LogOut size={18} />
                         <span>Logout</span>
                     </button>
