@@ -2118,15 +2118,22 @@ footer p,
     background: var(--luxury-cream);
 }
 
+.apt-service-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
 .apt-service-name h3 {
     font-family: var(--font-inter);
     font-size: 1.1rem;
-    margin-bottom: 0.3rem;
 }
 
 .apt-service-name span {
     display: inline-block;
     padding: 0.25rem 0.5rem;
+    border: 0.095rem solid var(--deep-gold);
     border-radius: 999px;
     background: var(--white);
     color: var(--deep-gold);

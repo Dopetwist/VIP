@@ -1,35 +1,58 @@
 import { useState } from "react";
 import { Calendar, Clock, MapPin } from "lucide-react";
 
-const appointmentData = {
-    Upcoming: {
-        title: "Volume Lash Extensions",
-        date: "Wednesday, June 10, 2026",
-        time: "10:00 AM",
-        location: "VIP Beauty Studio",
-        price: "$250",
-        note: "Please arrive 10 minutes early for your consultation.",
-    },
-    Completed: {
-        title: "Luxury Facial Ritual",
-        date: "Monday, May 25, 2026",
-        time: "2:30 PM",
-        location: "VIP Beauty Studio",
-        price: "$180",
-        note: "Your glow treatment was completed successfully.",
-    },
-    Cancelled: {
-        title: "Signature Blowout",
-        date: "Friday, May 15, 2026",
-        time: "4:00 PM",
-        location: "VIP Beauty Studio",
-        price: "$90",
-        note: "This appointment was cancelled and can be rescheduled anytime.",
-    },
-};
 
-export default function Appointments() {
+export default function Appointments({ data = {} }) {
+
+    const safeData = {
+        service: data.service || "No service selected",
+        date: data.date || "No date selected",
+        time: data.time || "No time selected",
+        price: data.price || "N/A",
+    };
+
+    // Format date from YYYY-MM-DD format
+    const formatDateForDisplay = (dateString) => {
+        if (!dateString) return 'Not selected';
+        const date = new Date(dateString + 'T00:00:00');
+        return date.toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+    };
+
+    const formattedDate = safeData.date && `${formatDateForDisplay(safeData.date)}`;
+
     const [activeTab, setActiveTab] = useState("Upcoming");
+
+    const appointmentData = {
+        Upcoming: {
+            title: safeData.service,
+            date: formattedDate,
+            time: safeData.time,
+            location: "VIP Beauty Studio",
+            price: safeData.price,
+            note: "Please arrive 10 minutes early for your consultation.",
+        },
+        Completed: {
+            title: "Luxury Facial Ritual",
+            date: "Monday, May 25, 2026",
+            time: "2:30 PM",
+            location: "VIP Beauty Studio",
+            price: 180,
+            note: "Your glow treatment was completed successfully.",
+        },
+        Cancelled: {
+            title: "Signature Blowout",
+            date: "Friday, May 15, 2026",
+            time: "4:00 PM",
+            location: "VIP Beauty Studio",
+            price: 90,
+            note: "This appointment was cancelled and can be rescheduled anytime.",
+        },
+    };
 
     const appointmentSections = ["Upcoming", "Completed", "Cancelled"];
     const selectedAppointment = appointmentData[activeTab];
@@ -80,7 +103,7 @@ export default function Appointments() {
             </div>
 
             <div className="apt-price">
-                <p>{selectedAppointment.price}</p>
+                <p>${selectedAppointment.price}</p>
             </div>
         </div>
     );

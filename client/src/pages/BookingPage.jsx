@@ -122,7 +122,7 @@ export default function BookingPage() {
                         {currentStep === 6 && (
                             <button 
                             className="confirm-btn"
-                            onClick={() => navigate("/dashboard")}
+                            onClick={() => navigate("/dashboard", { state: { data: bookingData } })}
                             >
                                 Confirm Booking
                             </button>
