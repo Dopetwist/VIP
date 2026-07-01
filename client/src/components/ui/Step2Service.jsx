@@ -22,10 +22,10 @@ function Step2Service({ data, updateBooking }) {
               : ""
             }`}
             onClick={() =>
-              updateBooking(
-                "service",
-                service.name
-              )
+              updateBooking({
+                  service: service.name,
+                  price: service.price
+              })
             }
             >
               <p className="service-box-name">{service.name}</p>

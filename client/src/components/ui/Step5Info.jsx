@@ -4,13 +4,12 @@ function Step5Info({ data, updateBooking }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    updateBooking(
-      "info",
-      {
+    updateBooking({
+      info: {
         ...data.info,
         [name]: value
       }
-    );
+    });
   }
 
   return (

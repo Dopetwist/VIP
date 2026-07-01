@@ -19,6 +19,7 @@ export default function BookingPage() {
     const [ bookingData, setBookingData ] = useState({
         category: "",
         service: "",
+        price: "",
         date: "",
         time: "",
         info: {
@@ -40,10 +41,10 @@ export default function BookingPage() {
         }
     };
 
-    const updateBooking = (field, value) => {
+    const updateBooking = (updates) => {
         setBookingData((prev) => ({
             ...prev,
-            [field]: value
+            ...updates
         }));
     };
 
