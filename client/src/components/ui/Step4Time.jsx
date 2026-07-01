@@ -26,10 +26,10 @@ function Step4Time({ data, updateBooking }) {
             ${data.time === `${t.timeSlot} ${t.moment}` ? "selected" : ""}
           `}
           onClick={() => 
-            updateBooking(
-              "time",
-              `${t.timeSlot} ${t.moment}`
-          )}
+            updateBooking({
+              time: `${t.timeSlot} ${t.moment}`
+            })
+          }
           >
             <p>{t.timeSlot} {t.moment} 
               <span className="booked-span">

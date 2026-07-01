@@ -34,10 +34,9 @@ function Step3Date({ data, updateBooking }) {
         const month = String(nextDate.getMonth() + 1).padStart(2, '0');
         const day = String(nextDate.getDate()).padStart(2, '0');
         const formattedDate = `${year}-${month}-${day}`;
-        updateBooking(
-          "date",
-          formattedDate
-        );
+        updateBooking({
+          date: formattedDate
+        });
       } catch (e) {
         // swallow errors to avoid breaking consumer
         // caller can handle their own updateBooking implementation

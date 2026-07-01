@@ -10,6 +10,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
+import CartItem from './components/cart/CartItem';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/cart" element={<CartItem />} />
       </Route>
     </Routes>
   )

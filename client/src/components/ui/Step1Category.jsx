@@ -41,10 +41,9 @@ export default function Step1Category ({ data, updateBooking }) {
                             }`}
 
                             onClick={() =>
-                                updateBooking(
-                                    "category",
-                                    category.service
-                                )
+                                updateBooking({
+                                    category: category.service
+                                })
                             }
                         >
                             <figure>

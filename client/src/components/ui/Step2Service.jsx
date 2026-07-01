@@ -9,7 +9,7 @@ function Step2Service({ data, updateBooking }) {
 
   return (
     <div className="choose">
-      <h2>Choose Your Service</h2>
+      {filteredServices.length > 0 && <h2>Choose Your Service</h2>}
 
       <div className="filtered-services-container">
         {filteredServices.length > 0 ? (
@@ -22,10 +22,10 @@ function Step2Service({ data, updateBooking }) {
               : ""
             }`}
             onClick={() =>
-              updateBooking(
-                "service",
-                service.name
-              )
+              updateBooking({
+                  service: service.name,
+                  price: service.price
+              })
             }
             >
               <p className="service-box-name">{service.name}</p>
@@ -39,7 +39,7 @@ function Step2Service({ data, updateBooking }) {
             </div>
           ))
         ) : (
-          <p>No service found in this category!</p>
+          <p className="no-service">No service found in this category!</p>
         )}
       </div>
     </div>

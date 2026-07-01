@@ -40,7 +40,7 @@ function Step6Review({ data }) {
         <div className="review-total">
           <div className="review-total-box">
             <h3>Total</h3>
-            <p>$85</p>
+            <p>${data.price}</p>
           </div>
           
           <p>Payment will be collected at the studio</p>

@@ -1,4 +1,9 @@
+import { useNavigate } from "react-router";
+
 export default function Orders() {
+
+    const navigate = useNavigate();
+
     return (
         <div className="panel-card orders-card">
             <div className="panel-header">
@@ -6,7 +11,13 @@ export default function Orders() {
                     <p className="section-eyebrow">Purchases</p>
                     <h2>My Orders</h2>
                 </div>
-                <button type="button" className="primary-button">Shop Again</button>
+                <button 
+                type="button" 
+                className="primary-button"
+                onClick={() => navigate("/shop")}
+                >
+                    Shop Again
+                </button>
             </div>
 
             <div className="orders-summary">
