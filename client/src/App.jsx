@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Routes, Route } from 'react-router';
 import products from './data/products';
+import { CartProvider } from './hooks/useCart';
 import HomePage from './pages/HomePage';
 import ServicePage from './pages/ServicePage';
 import BookingPage from './pages/BookingPage';
@@ -11,6 +12,8 @@ import ContactPage from './pages/ContactPage';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
 import CartItem from './components/cart/CartItem';
+import CheckoutPage from './pages/CheckoutPage';
+import OrderSuccessPage from './pages/OrderSuccessPage';
 
 function App() {
 
@@ -34,20 +37,24 @@ function App() {
   );
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
+    <CartProvider>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
 
-      <Route element={<Layout />}>
-        <Route path="/services" element={<ServicePage />} />
-        <Route path="/book" element={<BookingPage />} />
-        <Route path="/shop" element={<ShopPage filteredProducts={filteredProducts} />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/cart" element={<CartItem />} />
-      </Route>
-    </Routes>
+        <Route element={<Layout />}>
+          <Route path="/services" element={<ServicePage />} />
+          <Route path="/book" element={<BookingPage />} />
+          <Route path="/shop" element={<ShopPage filteredProducts={filteredProducts} />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/cart" element={<CartItem />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/order-success" element={<OrderSuccessPage />} />
+        </Route>
+      </Routes>
+    </CartProvider>
   )
 }
 
