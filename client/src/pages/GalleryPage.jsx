@@ -22,7 +22,7 @@ function GalleryPage() {
     return (
 
         <div className="gallery-page">
-            <div className="service-header">
+            <div className="page-header">
                 <h2>Our Gallery</h2>
                 <p>Explore our portfolio of beautiful transformations and artistic work</p>
             </div>

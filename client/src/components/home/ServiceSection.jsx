@@ -53,7 +53,7 @@ function ServiceSection() {
                 </div>
 
                 <div className="service-lists">
-                    {services.map(service => (
+                    {services.slice(0, 3).map(service => (
                         <div key={service.id} className="service-list-item">
                             <div className="name-box">
                                 <h4>{service.name}</h4>
