@@ -20,7 +20,7 @@ function ServicePage() {
     return (
 
         <div className="service-page">
-            <div className="service-header">
+            <div className="page-header">
                 <h2>Our Services</h2>
                 <p>Explore our comprehensive range of luxury beauty services, tailored to enhance your natural beauty.</p>
             </div>

@@ -7,7 +7,7 @@ function AboutPage() {
     return (
 
         <div className="about-page">
-            <div className="service-header">
+            <div className="page-header">
                 <h2>About VIP Beauty Studio</h2>
                 <p>Where luxury meets expertise in beauty services</p>
             </div>

@@ -280,14 +280,15 @@ section {
 }
 
 .service-header h2 {
-    font-family: var(--font-inter);
-    font-size: 2.8rem;
+    font-family: var(--font-playfair);
+    font-size: 3rem;
     font-weight: 500;
     letter-spacing: 0.05rem;
     margin-bottom: 0.5rem;
 }
 
-.service-header p {
+.service-header p,
+.page-header p {
     font-family: var(--font-inter);
     color: var(--sub-text);
 }
@@ -466,6 +467,18 @@ section {
     box-shadow: 0 0 0.7rem var(--secondary-color);
 }
 
+.page-header {
+    text-align: center;
+}
+
+.page-header h2 {
+    font-family: var(--font-inter);
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    margin-bottom: 0.5rem;
+}
+
 .buttons-box {
     display: flex;
     justify-content: space-between;
@@ -597,11 +610,14 @@ section {
 }
 
 .booking-box span {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     font-size: 1.5rem;
     font-family: var(--font-playfair);
     font-style: italic;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
     color: var(--luxury-gold);
     border: 0.1rem solid var(--luxury-gold);
     border-radius: 50%;

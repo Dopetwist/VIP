@@ -28,7 +28,7 @@ function ShopPage({ filteredProducts }) {
     return (
 
         <div className="shop-page">
-            <div className="service-header">
+            <div className="page-header">
                 <h2>Hair Care Products</h2>
                 <p>Premium professional-grade hair care products for salon-quality results at home</p>
             </div>
