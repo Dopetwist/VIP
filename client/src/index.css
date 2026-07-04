@@ -999,7 +999,7 @@ footer p,
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     transition: .5s ease;
 }
 
@@ -1313,7 +1313,6 @@ footer p,
 .gallery-card {
     height: 400px;
     background: var(--white);
-    padding: 1rem;
     border: 0.08rem solid var(--border);
     border-radius: 0.5rem;
     position: relative;
@@ -1321,6 +1320,8 @@ footer p,
 }
 
 .gallery-card figure img {
+    width: 100%;
+    display: block;
     transition: .5s ease;
 }
 
