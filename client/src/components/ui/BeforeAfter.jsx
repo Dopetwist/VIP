@@ -18,44 +18,44 @@ function BeforeAfter() {
                 <div className="before-after-container">
                     <div className="before-after-card">
                         <figure className="before-figure">
-                            <img src="/path/to/image.jpg" alt="Before Image" />
+                            <img src="/images/before-after/tattoo-before1.png" alt="Before Image" />
                             <div className="before">Before</div>
                         </figure>
                         <figure className="after-figure">
-                            <img src="/path/to/image.jpg" alt="After Image" />
+                            <img src="/images/before-after/tattoo-after1.png" alt="After Image" />
                             <div className="after">After</div>
                         </figure>
                     </div>
 
                     <div className="before-after-card">
                         <figure className="before-figure">
-                            <img src="/path/to/image.jpg" alt="Before Image" />
+                            <img src="/images/before-after/lash-before.png" alt="Before Image" />
                             <div className="before">Before</div>
                         </figure>
                         <figure className="after-figure">
-                            <img src="/path/to/image.jpg" alt="After Image" />
+                            <img src="/images/before-after/lash-after.png" alt="After Image" />
                             <div className="after">After</div>
                         </figure>
                     </div>
 
                     <div className="before-after-card">
                         <figure className="before-figure">
-                            <img src="/path/to/image.jpg" alt="Before Image" />
+                            <img src="/images/before-after/nail-before.png" alt="Before Image" />
                             <div className="before">Before</div>
                         </figure>
                         <figure className="after-figure">
-                            <img src="/path/to/image.jpg" alt="After Image" />
+                            <img src="/images/before-after/nail-after.png" alt="After Image" />
                             <div className="after">After</div>
                         </figure>
                     </div>
 
                     <div className="before-after-card">
                         <figure className="before-figure">
-                            <img src="/path/to/image.jpg" alt="Before Image" />
+                            <img src="/images/before-after/tattoo-before2.png" alt="Before Image" />
                             <div className="before">Before</div>
                         </figure>
                         <figure className="after-figure">
-                            <img src="/path/to/image.jpg" alt="After Image" />
+                            <img src="/images/before-after/tattoo-after2.png" alt="After Image" />
                             <div className="after">After</div>
                         </figure>
                     </div>
