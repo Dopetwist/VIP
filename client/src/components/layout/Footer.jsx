@@ -8,7 +8,7 @@ function Footer() {
             <div className="footer-container">
                 <div className="footer-logo">
                     <figure>
-                        <img src="/path/to/logo.png" alt="VIP Logo" />
+                        <img src="/images/VIP-Logo.jpeg" alt="VIP Logo" />
                     </figure>
 
                     <h2>Beauty Studio</h2>

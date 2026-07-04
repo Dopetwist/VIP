@@ -726,12 +726,12 @@ section {
 
 .before-after-card figure {
     width: 50%;
-    height: 300px;
+    height: 100%;
+    position: relative;
 }
 
-.before-figure,
-.after-figure {
-    position: relative;
+.before-figure {
+    border-right: 0.1rem solid var(--luxury-cream);
 }
 
 .before-figure .before,
@@ -741,12 +741,12 @@ section {
     left: 1rem;
 }
 
-.before-figure {
-    background-color: var(--luxury-beige);
-}
-
-.after-figure {
-    background-color: var(--luxury-gold-light);
+.before-figure img,
+.after-figure img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .before-figure .before {
@@ -890,6 +890,15 @@ footer p,
     width: 30%;
 }
 
+.footer-logo figure {
+    width: 8rem;
+}
+
+.footer-logo figure img {
+    width: 100%;
+    display: block;
+}
+
 .footer-logo figure,
 .footer-logo h2 {
     margin-bottom: 1rem;
@@ -999,7 +1008,7 @@ footer p,
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     transition: .5s ease;
 }
 
@@ -1311,16 +1320,21 @@ footer p,
 }
 
 .gallery-card {
-    height: 400px;
-    background: var(--white);
-    padding: 1rem;
+    height: fit-content;
     border: 0.08rem solid var(--border);
     border-radius: 0.5rem;
     position: relative;
     overflow: hidden;
 }
 
+.gallery-card figure {
+   height: 100%;
+}
+
 .gallery-card figure img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
     transition: .5s ease;
 }
 
