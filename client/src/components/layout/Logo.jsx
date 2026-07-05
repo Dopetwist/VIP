@@ -8,7 +8,7 @@ function Logo() {
         onClick={() => window.location.href = "/"}
         >
             <figure>
-                <img src="/path/to/logo.png" alt="VIP Logo" />
+                <img src="/images/VIP-header-logo.png" alt="VIP Logo" />
             </figure>
 
             <p>Beauty Studio</p>

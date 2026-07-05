@@ -1,7 +1,6 @@
 import ProductCard from "./ProductCard";
 
-function ProductGrid({ products }) {
-    
+function ProductGrid({ products, handleToast }) {
     return (
 
         <div className="product-grid">
@@ -9,6 +8,7 @@ function ProductGrid({ products }) {
                 <ProductCard
                     key={p.id}
                     product={p}
+                    handleToast={handleToast}
                 />
             ))}
         </div>

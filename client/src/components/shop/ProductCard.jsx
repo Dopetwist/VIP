@@ -2,19 +2,17 @@ import Rating from "../ui/Rating";
 import { useCart } from "../../hooks/useCart";
 import { useState } from "react";
 
-function ProductCard({ product }) {
-    const { addToCart } = useCart();
-    const [isAdded, setIsAdded] = useState(false);
+function ProductCard({ product, handleToast }) {
+    const { cartItems, addToCart } = useCart();
 
     const handleAddToCart = () => {
         addToCart(product);
-        setIsAdded(true);
-        
-        // Reset button state after 1.5 seconds
-        setTimeout(() => {
-            setIsAdded(false);
-        }, 1500);
     };
+
+    // Function to check if product is already in cart
+    const isInCart = (id) => {
+        return cartItems.some(item => item.id === id);
+    }
 
     return (
 
@@ -36,10 +34,13 @@ function ProductCard({ product }) {
                 </div>
 
                 <button 
-                    className={isAdded ? "product-btn-added" : ""}
-                    onClick={handleAddToCart}
+                    className={isInCart(product.id) ? "product-btn-added" : ""}
+                    onClick={() => {
+                        handleAddToCart();
+                        handleToast();
+                    }}
                 >
-                    {isAdded ? "✓ Added to Cart" : "Add to Cart"}
+                    {isInCart(product.id) ? "✔ In Cart" : "Add to cart"}
                 </button>
             </div>
         </div>

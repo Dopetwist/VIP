@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 import { Clock, CircleAlert } from "lucide-react";
 import services from "../data/services";
 
 function ServicePage() {
 
     const [ activeTab, setActiveTab ] = useState("All");
+
+    const location = useLocation();
+
+    const serviceTab = location.state || "All";
 
     const filteredServices =
         activeTab === "All"
@@ -16,6 +21,12 @@ function ServicePage() {
         "Tattoos",
         "Nails"
     ]
+
+    useEffect(() => {
+        if (serviceTab) {
+            setActiveTab(serviceTab);
+        }
+    }, []);
     
     return (
 

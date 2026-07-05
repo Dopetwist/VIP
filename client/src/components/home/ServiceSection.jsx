@@ -1,8 +1,35 @@
+import { useNavigate } from "react-router";
 import {  HashLink } from "react-router-hash-link";
 import { ArrowRight, Clock } from "lucide-react";
 import services from "../../data/services";
 
+const serviceArray = [
+    {
+        id: 1,
+        category: "Lashes",
+        name: "Lash Extensions",
+        description: "Experience the art of lash extensions with our expert technicians. We offer a variety of styles, from natural to dramatic, using high-quality materials for a flawless finish.",
+        image: "/images/lash.jpg"
+    },
+    {
+        id: 2,
+        category: "Tattoos",
+        name: "Elegant Tattoos",
+        description: "Get a custom tattoo designed by our talented artists. We use only the finest inks and equipment to ensure your tattoo looks stunning for years to come.",
+        image: "/images/tattoo.jpg"
+    },
+    {
+        id: 3,
+        category: "Nails",
+        name: "Nail Art",
+        description: "Express your style with our exquisite nail art services. From classic manicures to intricate designs, our talented nail artists will create stunning looks that reflect your personality.",
+        image: "/images/nails.jpg"
+    }
+]
+
 function ServiceSection() {
+
+    const navigate = useNavigate();
     
     return (
 
@@ -15,41 +42,24 @@ function ServiceSection() {
                 </div>
 
                 <div className="services-container">
-                    <div className="service-card">
-                        <figure>
-                            <img src="/images/lash.jpg" alt="Lash Extensions" />
-                        </figure>
-                        <h3>Lash Extensions</h3>
-                        <p>Experience the art of lash extensions with our expert technicians. We offer a variety of styles, from natural to dramatic, using high-quality materials for a flawless finish.</p>
+                    {serviceArray.map((service) => (
+                        <div key={service.id} className="service-card">
+                            <figure>
+                                <img src={service.image} alt={service.name} />
+                            </figure>
+                            <h3>{service.name}</h3>
+                            <p>{service.description}</p>
 
-                        <HashLink to="/services/lash-extensions" className="service-link">
-                            View Lash Services <ArrowRight size={16} />
-                        </HashLink>
-                    </div>
-
-                    <div className="service-card">
-                        <figure>
-                            <img src="/images/tattoo.jpg" alt="Tattoo" />
-                        </figure>
-                        <h3>Elegant Tattoos</h3>
-                        <p>Get a custom tattoo designed by our talented artists. We use only the finest inks and equipment to ensure your tattoo looks stunning for years to come.</p>
-
-                        <HashLink to="/services/tattoos" className="service-link">
-                            View Tattoo Services <ArrowRight size={16} />
-                        </HashLink>
-                    </div>
-
-                    <div className="service-card">
-                        <figure>
-                            <img src="/images/nails.jpg" alt="Nails" />
-                        </figure>
-                        <h3>Nail Art</h3>
-                        <p>Express your style with our exquisite nail art services. From classic manicures to intricate designs, our talented nail artists will create stunning looks that reflect your personality.</p>
-
-                        <HashLink to="/services/nail-art" className="service-link">
-                            View Nail Services <ArrowRight size={16} />
-                        </HashLink>
-                    </div>
+                            <button 
+                            className="service-link"
+                            onClick={() => {
+                                navigate("/services", { state: service.category });
+                            }}
+                            >
+                                View {service.category} Services <ArrowRight size={16} />
+                            </button>
+                        </div>
+                    ))}
                 </div>
 
                 <div className="service-lists">
@@ -65,6 +75,7 @@ function ServiceSection() {
                             <button 
                             type="button" 
                             className="service-book-btn"
+                            onClick={() => navigate("/book")}
                             >
                                 Book Now
                             </button>
