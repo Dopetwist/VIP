@@ -66,6 +66,16 @@ section {
     flex-direction: column;
 }
 
+.logo-section figure {
+    width: 5rem;
+    margin-bottom: 0.5rem;
+}
+
+.logo-section figure img {
+    width: 100%;
+    display: block;
+}
+
 .logo-section p {
     font-family: var(--font-inter);
     font-size: 0.9rem;
@@ -347,17 +357,20 @@ section {
 }
 
 .service-link {
+    background: transparent;
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
     font-family: var(--font-inter);
     font-size: 0.9rem;
     color: var(--deep-gold);
+    border: none;
     text-decoration: none;
     margin-top: 1rem;
 }
 
 .service-link:hover {
+    cursor: pointer;
     text-decoration: underline;
 }
 
@@ -409,7 +422,7 @@ section {
 }
 
 .service-page {
-    padding-top: 11%;
+    padding-top: 13%;
 }
 
 .service-category {
@@ -965,7 +978,7 @@ footer p,
 
 .shop-page {
     background: var(--white);
-    padding-top: 11%;
+    padding-top: 13%;
 }
 
 .product-grid {
@@ -1017,7 +1030,7 @@ footer p,
 }
 
 .contact-page {
-    padding-top: 11%;
+    padding-top: 13%;
 }
 
 .contact-header {
@@ -1308,7 +1321,7 @@ footer p,
 }
 
 .gallery-page {
-    padding-top: 11%;
+    padding-top: 13%;
 }
 
 .gallery-grid {
@@ -1391,7 +1404,7 @@ footer p,
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 11%;
+    padding-top: 13%;
 }
 
 .about-sub-header {
@@ -1577,7 +1590,7 @@ footer p,
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 11% 0 3rem;
+    padding: 13% 0 3rem;
 }
 
 .booking-page-container {
@@ -1891,7 +1904,7 @@ footer p,
 }
 
 .dashboard-page {
-    padding: 11% 5% 5rem;
+    padding: 13% 5% 5rem;
     min-height: 100vh;
     background: linear-gradient(135deg, var(--luxury-cream) 0%, var(--white) 100%);
 }
@@ -2877,6 +2890,57 @@ footer p,
 .btn-secondary:hover {
     background: var(--luxury-beige);
     border-color: var(--luxury-gold);
+}
+
+/* Container to center the toast */
+.toast-container {
+    width: 30%;
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    pointer-events: none; /* allows clicks through container */
+}
+
+.toast {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    pointer-events: all;
+    animation: slideIn 0.4s ease;
+}
+
+#toast-text {
+    font-family: var(--inter);
+    color: var(--text-color);
+}
+
+/* Types */
+.toast.success {
+    background-color: #28a745;
+}
+
+.toast.error {
+    background-color: #dc3545;
+}
+
+.toast.info {
+    background-color: #007bff;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ========== CHECKOUT SUMMARY SIDEBAR ========== */
