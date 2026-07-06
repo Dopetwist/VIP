@@ -2910,7 +2910,6 @@ footer p,
 
 /* Container to center the toast */
 .toast-container {
-    width: 25%;
     position: fixed;
     bottom: 2rem;
     right: 2rem;

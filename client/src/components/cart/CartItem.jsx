@@ -1,11 +1,29 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
-import { ShoppingBag, Plus, Minus, Trash2 } from "lucide-react";
+import { ShoppingBag, CircleCheck, Plus, Minus, Trash2 } from "lucide-react";
 import { useCart } from "../../hooks/useCart";
+import Toast from "../animation/Toast";
 
 export default function CartItem() {
     
     const navigate = useNavigate();
     const { cartItems, removeFromCart, updateQuantity, getTotalPrice } = useCart();
+
+    const [ toast, setToast ] = useState(null);
+    
+    const handleToast = () => {
+        setToast({
+            message: <span className="circle-check"><CircleCheck className="circle-icon" /> Product quantity successfully updated!</span>,
+            type: "success"
+        })
+    }
+
+    const handleRemoveToast = () => {
+        setToast({
+            message: <span className="circle-check"><CircleCheck className="circle-icon" /> Item removed successfully! </span>,
+            type: "success"
+        })
+    }
 
     if (cartItems.length === 0) {
         return (
@@ -56,14 +74,20 @@ export default function CartItem() {
                                     <div className="cart-item-quantity">
                                         <button 
                                             className="qty-btn"
-                                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                                            onClick={() => {
+                                                updateQuantity(item.id, item.quantity - 1);
+                                                handleToast();
+                                            }}
                                         >
                                             <Minus size={16} />
                                         </button>
                                         <span className="qty-display">{item.quantity}</span>
                                         <button 
                                             className="qty-btn"
-                                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                            onClick={() => {
+                                                updateQuantity(item.id, item.quantity + 1);
+                                                handleToast();
+                                            }}
                                         >
                                             <Plus size={16} />
                                         </button>
@@ -75,7 +99,10 @@ export default function CartItem() {
 
                                     <button 
                                         className="cart-item-remove"
-                                        onClick={() => removeFromCart(item.id)}
+                                        onClick={() => {
+                                            removeFromCart(item.id);
+                                            handleRemoveToast();
+                                        }}
                                         title="Remove from cart"
                                     >
                                         <Trash2 size={18} />
@@ -133,6 +160,15 @@ export default function CartItem() {
                     </div>
                 </div>
             </div>
+
+            {/* Render Toast */}
+            {toast && (
+                <Toast
+                    message={toast.message}
+                    type={toast.type}
+                    onClose={() => setToast(null)}
+                />
+            )}
         </section>
     )
 }
