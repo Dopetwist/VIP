@@ -15,18 +15,18 @@ function Step2Service({ data, updateBooking }) {
         {filteredServices.length > 0 ? (
           filteredServices.map((service) => (
             <div 
-            key={service.id} 
-            className={`service-box ${
-              data.service === service.name
-              ? "selected"
-              : ""
-            }`}
-            onClick={() =>
-              updateBooking({
-                  service: service.name,
-                  price: service.price
-              })
-            }
+              key={service.id} 
+              className={`service-box ${
+                data.service === service.name
+                ? "selected"
+                : ""
+              }`}
+              onClick={() => 
+                updateBooking({
+                    service: service.name,
+                    price: service.price
+                })
+              }
             >
               <p className="service-box-name">{service.name}</p>
               <span>
