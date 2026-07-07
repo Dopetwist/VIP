@@ -1789,7 +1789,7 @@ footer p,
 }
 
 .time-box.booked {
-    cursor: not-allowed;
+    pointer-events: none;
     color: var(--sub-text);
     border: 0.09rem solid var(--border);
 }
