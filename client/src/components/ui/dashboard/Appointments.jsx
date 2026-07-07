@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { Calendar, Clock, MapPin } from "lucide-react";
 
 
-export default function Appointments({ data = {} }) {
+export default function Appointments({ data = {}, handleToast }) {
 
     const navigate = useNavigate();
 
@@ -108,8 +108,23 @@ export default function Appointments({ data = {} }) {
                 <div className="apt-second-section">
                     {activeTab === "Upcoming" && (
                         <>
-                            <button type="button" className="secondary-button" id="reschedule">Reschedule</button>
-                            <button type="button" className="primary-button" id="cancel">Cancel</button>
+                            <button 
+                            type="button" 
+                            className="secondary-button" 
+                            id="reschedule"
+                            onClick={() => handleToast("Reschedule")}
+                            >
+                                Reschedule
+                            </button>
+
+                            <button 
+                            type="button" 
+                            className="primary-button" 
+                            id="cancel"
+                            onClick={() => handleToast("Cancel")}
+                            >
+                                Cancel
+                            </button>
                         </>
                     )}
 
