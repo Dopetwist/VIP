@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { Clock, CircleAlert } from "lucide-react";
 import services from "../data/services";
 
@@ -10,6 +10,8 @@ function ServicePage() {
     const location = useLocation();
 
     const serviceTab = location.state || "All";
+
+    const navigate = useNavigate();
 
     const filteredServices =
         activeTab === "All"
@@ -79,6 +81,7 @@ function ServicePage() {
                                         <button 
                                         type="button" 
                                         className="service-book-btn"
+                                        onClick={() => navigate("/book")}
                                         >
                                             Book Now
                                         </button>

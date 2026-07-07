@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { CircleAlert, CircleCheck } from "lucide-react";
+import Toast from "../components/animation/Toast";
 
 import BookingProgress from "../components/ui/BookingProgress";
 import Step1Category from "../components/ui/Step1Category";
@@ -16,6 +18,19 @@ export default function BookingPage() {
 
     const [ currentStep, setCurrentStep ] = useState(1);
 
+    const [ toast, setToast ] = useState(null);
+    
+    const handleToast = (text) => {
+        setToast({
+            message: <span className="circle-check">
+                    {currentStep < 6 ? <CircleAlert className="circle-icon" />
+                        : <CircleCheck className="circle-icon" />
+                    } 
+                    {text} 
+                </span>
+        })
+    }
+
     const [ bookingData, setBookingData ] = useState({
         category: "",
         service: "",
@@ -30,6 +45,44 @@ export default function BookingPage() {
     });
 
     const nextStep = () => {
+
+        switch (currentStep) {
+            case 1:
+                if (!bookingData.category) {
+                    handleToast("Please select a category.");
+                    return;
+                }
+                break;
+
+            case 2: 
+                if (!bookingData.service) {
+                    handleToast("Please select a service.");
+                    return;
+                }
+                break;
+
+            case 3: 
+                if (!bookingData.date) {
+                    handleToast("Please select a date.");
+                    return;
+                }
+                break;
+
+            case 4: 
+                if (!bookingData.time) {
+                    handleToast("Please select a time slot.");
+                    return;
+                }
+                break;
+
+            case 5: 
+                if (!bookingData.info.fullName || !bookingData.info.email || !bookingData.info.phone) {
+                    handleToast("Please fill in all required fields.");
+                    return;
+                }
+                break;
+        }
+
         if (currentStep < 6) {
             setCurrentStep((prev) => prev + 1);
         }
@@ -122,14 +175,27 @@ export default function BookingPage() {
                         {currentStep === 6 && (
                             <button 
                             className="confirm-btn"
-                            onClick={() => navigate("/dashboard", { state: { data: bookingData } })}
+                            onClick={() => {
+                                handleToast("Booking confirmed! You'll receive an email shortly.");
+                                setTimeout(() => {
+                                    navigate("/dashboard", { state: { data: bookingData } })
+                                }, 3000);
+                            }}
                             >
-                                Confirm Booking
+                                {toast ? "Processing..." : "Confirm Booking"}
                             </button>
                         )}
                     </div>
                 </div>
             </div>
+
+            {/* Render Toast */}
+            {toast && (
+                <Toast
+                    message={toast.message}
+                    onClose={() => setToast(null)}
+                />
+            )}
         </div>
     );
 }

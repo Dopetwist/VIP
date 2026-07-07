@@ -22,14 +22,14 @@ function Step4Time({ data, updateBooking }) {
       <div className="time-container">
         {time.map((t) => (
           <div key={t.id} className={`time-box 
-            ${t.availability === "booked" ? "booked" : ""}
-            ${data.time === `${t.timeSlot} ${t.moment}` ? "selected" : ""}
-          `}
-          onClick={() => 
-            updateBooking({
-              time: `${t.timeSlot} ${t.moment}`
-            })
-          }
+              ${t.availability === "booked" ? "booked" : ""}
+              ${data.time === `${t.timeSlot} ${t.moment}` ? "selected" : ""}
+            `}
+            onClick={() => 
+              updateBooking({
+                time: `${t.timeSlot} ${t.moment}`
+              })
+            }
           >
             <p>{t.timeSlot} {t.moment} 
               <span className="booked-span">
