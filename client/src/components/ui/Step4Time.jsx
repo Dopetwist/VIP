@@ -10,7 +10,7 @@ function Step4Time({ data, updateBooking }) {
       { id: 5, timeSlot: "01:00", moment: "PM", availability: "booked" },
       { id: 6, timeSlot: "02:00", moment: "PM", availability: "free" },
       { id: 7, timeSlot: "03:00", moment: "PM", availability: "free" },
-      { id: 8, timeSlot: "04:00", moment: "PM", availability: "free" },
+      { id: 8, timeSlot: "04:00", moment: "PM", availability: "booked" },
       { id: 9, timeSlot: "05:00", moment: "PM", availability: "booked" },
       { id: 10, timeSlot: "06:00", moment: "PM", availability: "free" }
   ];
