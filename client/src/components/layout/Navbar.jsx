@@ -1,23 +1,35 @@
 import { useLocation } from 'react-router';
-import { HashLink } from "react-router-hash-link";
+import { HashLink } from 'react-router-hash-link';
 
-function Navbar() {
-
+function Navbar({ isOpen = false, onLinkClick }) {
     const location = useLocation();
 
-    return (
+    const links = [
+        { to: '/', label: 'Home', path: '/' },
+        { to: '/services', label: 'Services', path: '/services' },
+        { to: '/shop', label: 'Shop', path: '/shop' },
+        { to: '/gallery', label: 'Gallery', path: '/gallery' },
+        { to: '/about', label: 'About', path: '/about' },
+        { to: '/contact', label: 'Contact', path: '/contact' },
+    ];
 
-        <nav id="navbar">
+    return (
+        <nav id="navbar" className={`navbar ${isOpen ? 'open' : ''}`}>
             <div className="nav-links">
-                <HashLink smooth to="/" className={`link body-text ${location.pathname === "/" ? "active" : ""}`}>Home</HashLink>
-                <HashLink smooth to="/services" className={`link body-text ${location.pathname === "/services" ? "active" : ""}`}>Services</HashLink>
-                <HashLink smooth to="/shop" className={`link body-text ${location.pathname === "/shop" ? "active" : ""}`}>Shop</HashLink>
-                <HashLink smooth to="/gallery" className={`link body-text ${location.pathname === "/gallery" ? "active" : ""}`}>Gallery</HashLink>
-                <HashLink smooth to="/about" className={`link body-text ${location.pathname === "/about" ? "active" : ""}`}>About</HashLink>
-                <HashLink smooth to="/contact" className={`link body-text ${location.pathname === "/contact" ? "active" : ""}`}>Contact</HashLink>
+                {links.map((link) => (
+                    <HashLink
+                        key={link.path}
+                        smooth
+                        to={link.to}
+                        className={`link body-text ${location.pathname === link.path ? 'active' : ''}`}
+                        onClick={onLinkClick}
+                    >
+                        {link.label}
+                    </HashLink>
+                ))}
             </div>
         </nav>
-    )
+    );
 }
 
 export default Navbar;

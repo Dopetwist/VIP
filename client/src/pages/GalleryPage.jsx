@@ -28,7 +28,7 @@ function GalleryPage() {
             </div>
 
             <div className="services-tab-container">
-                <div className="services-tab">
+                <div className="services-tab" id="gallery-tab">
                     <button 
                     className={`service-tab-item ${activeTab === "All" ? "active" : ""}`}
                     onClick={() => setActiveTab("All")}
