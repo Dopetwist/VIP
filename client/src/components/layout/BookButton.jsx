@@ -6,6 +6,7 @@ function BookButton() {
 
     return (
         <button 
+        id="header-book-btn"
         className="book-button"
         onClick={() => navigate("/book")}
         >

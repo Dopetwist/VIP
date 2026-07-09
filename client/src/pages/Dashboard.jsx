@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import { CircleAlert } from "lucide-react";
 import UserAccount from "../components/ui/dashboard/UserAccount";
@@ -9,13 +9,22 @@ import Profile from "../components/ui/dashboard/Profile";
 import Toast from "../components/animation/Toast";
 
 export default function Dashboard() {
-    const [activeView, setActiveView] = useState("overview");
+    const [activeView, setActiveView] = useState("");
 
     const location = useLocation();
 
     const serviceData = location?.state?.data;
+    const activeState = location?.state?.active;
 
     const [ toast, setToast ] = useState(null);
+
+    useEffect(() => {
+        if (activeState) {
+            setActiveView(activeState);
+        } else {
+            setActiveView("overview");
+        }
+    }, []);
     
     const handleToast = (text) => {
         setToast({
@@ -42,7 +51,11 @@ export default function Dashboard() {
     return (
         <div className="dashboard-page">
             <div className="dashboard-main">
-                <UserAccount activeView={activeView} onNavigate={setActiveView} />
+                <UserAccount 
+                    activeView={activeView} 
+                    onNavigate={setActiveView}
+                    data={serviceData}
+                />
                 <div className="dashboard-content-panel">{renderPanel()}</div>
             </div>
 

@@ -1,8 +1,11 @@
-import { useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
 
 function Navbar({ isOpen = false, onLinkClick }) {
+
     const location = useLocation();
+
+    const navigate = useNavigate();
 
     const links = [
         { to: '/', label: 'Home', path: '/' },
@@ -28,6 +31,17 @@ function Navbar({ isOpen = false, onLinkClick }) {
                     </HashLink>
                 ))}
             </div>
+
+            <button 
+            id="nav-book-btn"
+            className="book-button"
+            onClick={() => {
+                navigate("/book");
+                onLinkClick();
+            }}
+            >
+                Book Now
+            </button>
         </nav>
     );
 }

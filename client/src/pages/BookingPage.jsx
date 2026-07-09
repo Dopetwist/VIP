@@ -178,8 +178,11 @@ export default function BookingPage() {
                             onClick={() => {
                                 handleToast("Booking confirmed! You'll receive an email shortly.");
                                 setTimeout(() => {
-                                    navigate("/dashboard", { state: { data: bookingData } })
-                                }, 3000);
+                                    navigate("/dashboard", { state: { 
+                                        data: bookingData,
+                                        active: "appointments" 
+                                    } })
+                                }, 2000);
                             }}
                             >
                                 {toast ? "Processing..." : "Confirm Booking"}

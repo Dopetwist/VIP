@@ -104,6 +104,10 @@ export default function Appointments({ data = {}, handleToast }) {
                     <p><Clock size={14} /> {selectedAppointment.time}</p>
                     <p><MapPin size={14} /> {selectedAppointment.location}</p>
                     <p className="appointment-note">{selectedAppointment.note}</p>
+
+                    <div id="apt-price" className="apt-price">
+                        <span>${selectedAppointment.price}</span>
+                    </div>
                 </div>
                 <div className="apt-second-section">
                     {activeTab === "Upcoming" && (
@@ -138,10 +142,6 @@ export default function Appointments({ data = {}, handleToast }) {
                         </button>
                     )}
                 </div>
-            </div>
-
-            <div className="apt-price">
-                <p>${selectedAppointment.price}</p>
             </div>
         </div>
     );
