@@ -2268,9 +2268,17 @@ footer p,
 }
 
 .appointment-tab {
+    width: fit-content;
+    background: var(--luxury-beige);
+    color: var(--luxury-black);
     display: flex;
-    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 2rem;
+    border-radius: 2rem;
+    margin: 2rem 0;
+    padding: 0.3rem;
 }
 
 .appointment-tab-item {
@@ -2278,14 +2286,14 @@ footer p,
     border: none;
     border-radius: 999px;
     cursor: pointer;
-    background: var(--luxury-cream);
+    background: transparent;
     font-family: var(--font-inter);
     font-size: 0.9rem;
     color: var(--luxury-black);
 }
 
 .appointment-tab-item.active {
-    background: var(--luxury-gold);
+    background: var(--white);
     color: var(--luxury-black);
 }
 
@@ -2328,7 +2336,7 @@ footer p,
     margin-top: 0.45rem;
 }
 
-.apt-price {
+.apt-first-section #apt-price {
     margin-top: 1rem;
     font-family: var(--font-inter);
     font-size: 1.2rem;
@@ -3692,6 +3700,7 @@ footer p,
 
     #nav-book-btn {
         display: block;
+        width: 100%;
     }
 
     .navbar {
@@ -3792,6 +3801,10 @@ footer p,
         padding: 2rem;
     }
 
+    .why-box h2 {
+        margin-top: 2rem;
+    }
+
     .first-section, .second-section {
         border-right: none;
         border-left: none;
@@ -3831,11 +3844,19 @@ footer p,
         border-bottom: 0.07rem solid #555;
     }
 
+    .testimonial-card .quote {
+        margin: 1rem 0;
+    }
+
     .cta-container h1 {
         font-size: 3rem;
     }
 
-    .services-tab {
+    .appointment-tab-item {
+        padding: 0.3rem 0.5rem;
+    }
+
+    .services-tab, .appointment-tab {
         flex-wrap: nowrap;
         gap: 0;
     }
@@ -3915,13 +3936,16 @@ footer p,
         margin: 3rem 0;
     }
 
+    .certified-container {
+        flex-direction: column;
+    }
+
     .certified-header {
         font-size: 1.5rem;
     }
 
     .certified-description {
         max-width: 100%;
-        text-align: start;
     }
 
     .contact-map {
@@ -3974,7 +3998,12 @@ footer p,
     }
 
     .apt-second-section {
+        width: 100%;
         flex-direction: row;
+    }
+
+    .apt-second-section button {
+        width: 100%;
     }
 
     .cart-content {
@@ -4098,7 +4127,7 @@ footer p,
     }
 
     .footer-logo {
-        width: 60%;
+        width: 80%;
     }
 
     .footer-links {

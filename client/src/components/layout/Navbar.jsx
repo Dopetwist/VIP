@@ -33,6 +33,7 @@ function Navbar({ isOpen = false, onLinkClick }) {
             </div>
 
             <button 
+            id="nav-book-btn"
             className="book-button"
             onClick={() => {
                 navigate("/book");

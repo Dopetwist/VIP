@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import { CircleAlert } from "lucide-react";
 import UserAccount from "../components/ui/dashboard/UserAccount";
@@ -14,8 +14,15 @@ export default function Dashboard() {
     const location = useLocation();
 
     const serviceData = location?.state?.data;
+    const activeState = location?.state?.active;
 
     const [ toast, setToast ] = useState(null);
+
+    useEffect(() => {
+        if (activeState) {
+            setActiveView(activeState);
+        }
+    }, []);
     
     const handleToast = (text) => {
         setToast({
