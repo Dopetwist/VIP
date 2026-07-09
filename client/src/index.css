@@ -3668,9 +3668,6 @@ footer p,
 }
 
 @media (max-width: 480px) {
-    /* section {
-        padding: 4rem 2%;
-    } */
 
     .site-top {
         position: static;
@@ -3751,8 +3748,12 @@ footer p,
         grid-column: auto;
     }
 
+    .summary-items {
+        padding-right: 0;
+        max-height: none;
+    }
+
     .summary-item {
-        flex-direction: column;
         align-items: flex-start;
     }
 
@@ -3790,6 +3791,10 @@ footer p,
 
     .booking-container {
         flex-direction: column;
+    }
+
+    .booking-box {
+        margin-bottom: 2rem;
     }
 
     .featured-container {
@@ -3874,6 +3879,10 @@ footer p,
         gap: 1rem;
         padding: 0;
         margin-top: 2rem;
+    }
+
+    .step-count {
+        margin-bottom: 2rem;
     }
 
     .product-card h3,
@@ -3979,6 +3988,99 @@ footer p,
     .checkout-container {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .checkout-form {
+        padding: 1rem;
+    }
+
+    .checkout-form-content {
+        gap: 0.5rem;
+    }
+
+    .checkout-form-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .step-line {
+        margin-bottom: 0;
+    }
+
+    .form-row {
+        display: block;
+    }
+
+    .form-group {
+        margin-top: 1rem;
+    }
+
+    .form-group input, .form-group textarea {
+        padding: 0.5rem 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        font-size: 0.8rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .payment-notice {
+        margin-top: 1rem;
+    }
+
+    .success-title {
+        font-size: 1.7rem;
+    }
+
+    .success-message {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .order-number {
+        padding: 1rem;
+    }
+
+    .order-details {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-connector {
+        right: -5%;
+    }
+
+    .toast-container {
+        width: 100%;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
     }
 
     .footer-container {
