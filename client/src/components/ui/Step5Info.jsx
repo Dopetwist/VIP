@@ -27,7 +27,7 @@ function Step5Info({ data, updateBooking }) {
               id="name" 
               value={data.info?.fullName || ""}
               onChange={handleChange}
-              placeholder="Enter your full name" 
+              placeholder="Enter first and last names" 
             />
           </div>
           <div className="input-box">

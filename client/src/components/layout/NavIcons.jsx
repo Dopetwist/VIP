@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { ShoppingCart, User } from "lucide-react";
-import BookButton from "./BookButton";
 import { useCart } from "../../hooks/useCart";
+import BookButton from "./BookButton";
 
 
 function NavIcons() {

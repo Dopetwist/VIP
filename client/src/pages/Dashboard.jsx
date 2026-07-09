@@ -9,7 +9,7 @@ import Profile from "../components/ui/dashboard/Profile";
 import Toast from "../components/animation/Toast";
 
 export default function Dashboard() {
-    const [activeView, setActiveView] = useState("overview");
+    const [activeView, setActiveView] = useState("");
 
     const location = useLocation();
 
@@ -21,6 +21,8 @@ export default function Dashboard() {
     useEffect(() => {
         if (activeState) {
             setActiveView(activeState);
+        } else {
+            setActiveView("overview");
         }
     }, []);
     
@@ -49,7 +51,11 @@ export default function Dashboard() {
     return (
         <div className="dashboard-page">
             <div className="dashboard-main">
-                <UserAccount activeView={activeView} onNavigate={setActiveView} />
+                <UserAccount 
+                    activeView={activeView} 
+                    onNavigate={setActiveView}
+                    data={serviceData}
+                />
                 <div className="dashboard-content-panel">{renderPanel()}</div>
             </div>
 

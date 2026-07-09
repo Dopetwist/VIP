@@ -182,7 +182,7 @@ export default function BookingPage() {
                                         data: bookingData,
                                         active: "appointments" 
                                     } })
-                                }, 3000);
+                                }, 2000);
                             }}
                             >
                                 {toast ? "Processing..." : "Confirm Booking"}

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { LayoutDashboard, Calendar, Package, User, LogOut } from "lucide-react";
 
 const menuItems = [
@@ -7,16 +8,22 @@ const menuItems = [
     { key: "profile", label: "Profile", icon: User },
 ];
 
-export default function UserAccount({ activeView, onNavigate }) {
+export default function UserAccount({ activeView, onNavigate, data = {} }) {
+
+    const user = data.info.fullName;
+
+    // Get the initial letters of user's names
+    const names = user.trim().split(/\s+/).slice(0, 2);
+    const initials = names.map((name) => name[0]).join("");
 
     return (
         <aside className="dashboard-sidebar">
             <div className="account-container">
                 <div className="account-hero">
-                    <div className="account-avatar">SV</div>
+                    <div className="account-avatar">{initials}</div>
                     <div>
-                        <h2>Sarah Victor</h2>
-                        <p>sarah@example.com</p>
+                        <h2>{user}</h2>
+                        <p>{data.info.email}</p>
                     </div>
                 </div>
 
