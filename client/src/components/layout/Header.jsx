@@ -18,18 +18,21 @@ function Header() {
             <header className="header" id="header">
                 <Logo />
 
-                <button
-                    type="button"
-                    className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
-                    onClick={toggleMenu}
-                    aria-label="Toggle navigation menu"
-                    aria-expanded={isMenuOpen}
-                >
-                    {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-                </button>
-
                 <Navbar isOpen={isMenuOpen} onLinkClick={closeMenu} />
-                <NavIcons />
+                
+                <div className='menu-cart-container'>
+                    <NavIcons />
+
+                    <button
+                        type="button"
+                        className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+                        onClick={toggleMenu}
+                        aria-label="Toggle navigation menu"
+                        aria-expanded={isMenuOpen}
+                    >
+                        {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+                </div>
             </header>
         </div>
     );
