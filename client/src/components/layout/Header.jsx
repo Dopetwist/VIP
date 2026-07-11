@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Banner from './Banner';
 import Logo from './Logo';
@@ -10,6 +10,11 @@ function Header() {
 
     const toggleMenu = () => setIsMenuOpen((prev) => !prev);
     const closeMenu = () => setIsMenuOpen(false);
+    
+    // Close open navbar on scroll
+    useEffect(() => {
+        window.addEventListener("scroll", closeMenu);
+    }, []);
 
     return (
         <div className="site-top">
