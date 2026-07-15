@@ -333,7 +333,6 @@ section {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
     margin-top: 4rem;
 }
 
@@ -3390,12 +3389,6 @@ footer p,
         padding-right: 4%;
     }
 
-    /* .cart-section,
-    .checkout-section,
-    .order-success-section {
-        padding: 10rem 4% 4rem;
-    } */
-
     .checkout-container {
         grid-template-columns: 1fr;
     }
@@ -3419,78 +3412,116 @@ footer p,
 
 /* Tablets and Large Tablets (769px to 1199px) */
 @media (min-width: 769px) and (max-width: 1199px) {
+
+    .site-top {
+        position: static;
+    }
+
     .banner {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .header {
+        padding: 1rem 3%;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    section {
+        padding: 4rem 3%;
+    }
+
+    .hero-section {
+        min-height: 80vh;
+        padding: 6.5rem 5% 5rem;
     }
 
     .hero-section h1 {
         font-size: clamp(2.4rem, 6vw, 3.2rem);
     }
 
-    .page-header {
-        padding-bottom: 1.5rem;
+    .service-lists {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
     }
 
-    .services-tab-container {
-        flex-wrap: wrap;
+    .featured-container {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .service-list-item {
-        flex-direction: column;
-        align-items: flex-start;
+    .testimonial-container {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .product-card {
-        min-height: auto;
+    .testimonial-card {
+        padding: 1rem;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .before-figure img, .after-figure img {
+        height: 120px;
     }
 
-    .cart-content {
-        grid-template-columns: 1fr;
-    }
-
-    .cart-summary {
-        position: static;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .dashboard-main {
-        flex-direction: column;
-    }
-
-    .dashboard-sidebar {
+    .our-story {
         width: 100%;
-        position: static;
+        padding: 2rem;
+    }
+
+    .values-container {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+
+    .cta-container h1 {
+        font-size: 4rem;
+    }
+
+    .service-page,
+    .shop-page,
+    .gallery-page,
+    .about-page,
+    .contact-page,
+    .booking-section {
+        padding: 10% 1rem 4rem;
     }
 
     .booking-page-container {
-        padding: 1.25rem;
+        width: 90%;
     }
 
-    .booking-content {
-        flex-direction: column;
+    .sort {
+        margin-top: 2rem;
     }
 
-    .order-details {
-        grid-template-columns: 1fr;
+    .sort select {
+        width: 30%;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        padding: 0 5% 5rem;
+    }
+
+    .services-main-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        padding: 0 3%;
+    }
+
+    .before-after-section {
+        padding: 2rem;
     }
 
     .success-buttons {
-        flex-direction: column;
+        flex-direction: row-reverse;
     }
 
-    .success-buttons .btn-primary,
-    .success-buttons .btn-secondary {
-        min-width: 100%;
+    .toast-container {
+        width: 40%;
     }
 }
 
