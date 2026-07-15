@@ -10,9 +10,9 @@ const services = [
     {
         id: 2,
         category: "Lashes",
-        name: "Volume Lash Extensions",
-        description: "Fuller, dramatic look with multiple extensions per natural lash",
-        price: 200,
+        name: "Hybrid Lash Extensions",
+        description: "Quality lashes with multiple extensions per natural lash",
+        price: 170,
         time: 150
     },
     {
@@ -31,8 +31,16 @@ const services = [
         price: 450,
         time: 180
     },
-    {
+     {
         id: 5,
+        category: "Lashes",
+        name: "Volume Lash Extensions",
+        description: "Fuller, dramatic look with multiple extensions per natural lash",
+        price: 200,
+        time: 150
+    },
+    {
+        id: 6,
         category: "Lashes",
         name: "Mega Volume Lashes",
         description: "Ultimate dramatic volume and length",
@@ -40,7 +48,7 @@ const services = [
         time: 180
     },
     {
-        id: 6,
+        id: 7,
         category: "Lashes",
         name: "Lash Lift & Tint",
         description: "Natural lash enhancement with lift and tint",
@@ -48,7 +56,7 @@ const services = [
         time: 60
     },
     {
-        id: 7,
+        id: 8,
         category: "Tattoos",
         name: "Deep Ink",
         description: "Elegant colored Tattoo",
@@ -56,7 +64,7 @@ const services = [
         time: 150
     },
     {
-        id: 8,
+        id: 9,
         category: "Tattoos",
         name: "Eyeliner Tattoo",
         description: "Permanent eyeliner for effortless beauty",
@@ -64,7 +72,7 @@ const services = [
         time: 120
     },
     {
-        id: 9,
+        id: 10,
         category: "Nails",
         name: "Classic Manicure",
         description: "Professional nail care and polish",
@@ -72,7 +80,7 @@ const services = [
         time: 45
     },
     {
-        id: 10,
+        id: 11,
         category: "Nails",
         name: "Gel Manicure",
         description: "Long-lasting gel polish manicure",
@@ -80,7 +88,7 @@ const services = [
         time: 60
     },
     {
-        id: 11,
+        id: 12,
         category: "Nails",
         name: "Nail Art Design",
         description: "Custom artistic nail designs",
@@ -88,7 +96,7 @@ const services = [
         time: 90
     },
     {
-        id: 12,
+        id: 13,
         category: "Nails",
         name: "Acrylic Full Set",
         description: "Complete acrylic nail extensions",

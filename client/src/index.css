@@ -3336,6 +3336,7 @@ footer p,
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
 .success-buttons .btn-primary,
@@ -3389,16 +3390,8 @@ footer p,
         padding-right: 4%;
     }
 
-    .checkout-container {
-        grid-template-columns: 1fr;
-    }
-
     .checkout-summary {
         position: static;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
     }
 
     .contact-info-card {
@@ -3407,6 +3400,35 @@ footer p,
 
     .hero-section {
         padding-top: 10rem;
+    }
+
+    .service-page,
+    .shop-page,
+    .gallery-page,
+    .about-page,
+    .contact-page,
+    .booking-section,
+    .dashboard-page,
+    .cart-section,
+    .checkout-section,
+    .order-success-section {
+        padding: 16% 1rem 4rem;
+    }
+
+    .sort {
+        margin-top: 2rem;
+    }
+
+    .sort select {
+        width: 20%;
+    }
+
+    .timeline-connector {
+        right: -5%;
+    }
+
+    .toast-container {
+        width: 40%;
     }
 }
 
@@ -3422,7 +3444,8 @@ footer p,
     }
 
     .header {
-        padding: 1rem 3%;
+        flex-wrap: wrap;
+        gap: 2rem;
     }
 
     .nav-links {
@@ -3463,7 +3486,7 @@ footer p,
     }
 
     .our-story {
-        width: 100%;
+        width: 90%;
         padding: 2rem;
     }
 
@@ -3475,13 +3498,17 @@ footer p,
         font-size: 4rem;
     }
 
+    .timeline-connector {
+        right: -5%;
+    }
+
     .service-page,
     .shop-page,
     .gallery-page,
     .about-page,
     .contact-page,
     .booking-section {
-        padding: 10% 1rem 4rem;
+        padding: 6% 1rem 4rem;
     }
 
     .booking-page-container {
@@ -3497,18 +3524,17 @@ footer p,
     }
 
     .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         padding: 0 5% 5rem;
     }
 
     .services-main-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         padding: 0 3%;
     }
 
@@ -3516,12 +3542,12 @@ footer p,
         padding: 2rem;
     }
 
-    .success-buttons {
-        flex-direction: row-reverse;
-    }
-
     .toast-container {
         width: 40%;
+    }
+
+    .checkout-container {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -3680,6 +3706,11 @@ footer p,
 
     .service-tab-item {
         padding: 0.5rem 1rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
     }
 
     .services-main-container {
@@ -3991,10 +4022,6 @@ footer p,
         line-height: 1.4;
     }
 
-    .success-buttons {
-        flex-direction: row-reverse;
-    }
-
     .order-number {
         padding: 1rem;
     }
@@ -4282,6 +4309,11 @@ footer p,
 
     .service-tab-item {
         padding: 0.5rem 1rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
     }
 
     .services-main-container {
