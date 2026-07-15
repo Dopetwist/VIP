@@ -13,7 +13,7 @@ import Step6Review from "../components/ui/Step6Review";
 import Modal from "../components/modal/Modal";
 
 
-export default function BookingPage() {
+export default function BookingPage({ bookingData, setBookingData }) {
 
     const navigate = useNavigate();
 
@@ -22,20 +22,6 @@ export default function BookingPage() {
     const [ isPaying, setIsPaying ] = useState(false);
 
     const [ toast, setToast ] = useState(null);
-
-    const [ bookingData, setBookingData ] = useState({
-        category: "",
-        service: "",
-        price: "",
-        date: "",
-        time: "",
-        info: {
-            fullName: "",
-            email: "",
-            phone: "",
-            address: ""
-        }
-    });
 
     /* Effect to disable background scrolling when Modal is open and re-enable it when Modal is closed or component unmounts */
     useEffect(() => {
@@ -67,6 +53,8 @@ export default function BookingPage() {
                 active: "appointments" 
             } })
         }, 2000);
+        
+        localStorage.setItem('vip-bookings', JSON.stringify(bookingData));
     }
 
     const nextStep = () => {

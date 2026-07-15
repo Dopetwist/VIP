@@ -5,7 +5,7 @@ export default function Profile({ data }) {
     const initialProfile = {
         fullName: data.info?.fullName || "Sarah Victor",
         email: data.info?.email || "sarah@example.com",
-        phone: data.info?.phone || "+1 (555) 014-2847",
+        phone: data.info?.phone || "+234 123 456 7890",
         address: data.info?.address || "59 Agbebi Street, Surulere, Lagos",
         membership: "Gold Member",
     };

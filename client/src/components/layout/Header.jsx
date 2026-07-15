@@ -5,7 +5,7 @@ import Logo from './Logo';
 import Navbar from './Navbar';
 import NavIcons from './NavIcons';
 
-function Header() {
+function Header({ bookingData }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -26,7 +26,7 @@ function Header() {
                 <Navbar isOpen={isMenuOpen} onLinkClick={closeMenu} />
                 
                 <div className='menu-cart-container'>
-                    <NavIcons />
+                    <NavIcons bookingData={bookingData} />
 
                     <button
                         type="button"

@@ -9,12 +9,12 @@ import BeforeAfter from "../components/ui/BeforeAfter";
 import Testimonials from "../components/home/Testimonials";
 import CTA from "../components/home/CTA";
 
-function HomePage() {
+function HomePage({ bookingData }) {
     
     return (
 
         <main>
-            <Header />
+            <Header bookingData={bookingData} />
             <HeroSection />
             <ServiceSection />
             <WhyChoose />
