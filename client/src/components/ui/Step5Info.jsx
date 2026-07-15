@@ -52,6 +52,17 @@ function Step5Info({ data, updateBooking }) {
               placeholder="+234 123 456 7890" 
             />
           </div>
+          <div className="input-box">
+            <label htmlFor="address">Address</label>
+            <input 
+              type="text" 
+              name="address" 
+              id="address" 
+              value={data.info?.address || ""}
+              onChange={handleChange} 
+              placeholder="59 Agbebi Street, Surulere" 
+            />
+          </div>
         </form>
 
       </div>

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Routes, Route } from 'react-router';
 import products from './data/products';
 import { CartProvider } from './hooks/useCart';
@@ -36,19 +36,44 @@ function App() {
     [allProducts, filters]
   );
 
+  const [ bookingData, setBookingData ] = useState({
+      category: "",
+      service: "",
+      price: "",
+      date: "",
+      time: "",
+      info: {
+          fullName: "",
+          email: "",
+          phone: "",
+          address: ""
+      }
+  });
+
+  useEffect(() => {
+      const savedBooking = localStorage.getItem('vip-bookings');
+      if (savedBooking) {
+          try {
+              setBookingData(JSON.parse(savedBooking));
+          } catch (error) {
+              console.error('Error loading booking data from localStorage:', error);
+          }
+      }
+  }, []);
+
   return (
     <CartProvider>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage bookingData={bookingData} />} />
 
         <Route element={<Layout />}>
           <Route path="/services" element={<ServicePage />} />
-          <Route path="/book" element={<BookingPage />} />
+          <Route path="/book" element={<BookingPage bookingData={bookingData} setBookingData={setBookingData} />} />
           <Route path="/shop" element={<ShopPage filteredProducts={filteredProducts} />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard bookingData={bookingData} />} />
           <Route path="/cart" element={<CartItem />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/order-success" element={<OrderSuccessPage />} />
