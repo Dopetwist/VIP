@@ -3507,6 +3507,10 @@ footer p,
         right: -5%;
     }
 
+    .modal {
+        width: 50%;
+    }
+
     .toast-container {
         width: 40%;
     }
@@ -3620,6 +3624,10 @@ footer p,
 
     .before-after-section {
         padding: 2rem;
+    }
+
+    .modal {
+        width: 50%;
     }
 
     .toast-container {
@@ -4083,6 +4091,10 @@ footer p,
         font-size: 0.8rem;
     }
 
+    .modal {
+        width: 80%;
+    }
+
     .btn-primary, .btn-secondary {
         font-size: 0.8rem;
         padding: 0.8rem 1rem;
@@ -4425,6 +4437,10 @@ footer p,
 
     .sort select {
         width: 50%;
+    }
+
+    .modal {
+        width: 80%;
     }
 
     .product-grid {
