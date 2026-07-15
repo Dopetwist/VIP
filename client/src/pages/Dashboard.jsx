@@ -39,7 +39,7 @@ export default function Dashboard() {
             case "orders":
                 return <Orders />;
             case "profile":
-                return <Profile />;
+                return <Profile data={serviceData} />;
             default:
                 return <DashboardOverview 
                             onNavigate={setActiveView}

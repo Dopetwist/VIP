@@ -35,6 +35,7 @@ function Step6Review({ data }) {
           <p className="main-text full-name">{data.info.fullName}</p>
           <p className="sub-text">{data.info.email}</p>
           <p className="sub-text">{data.info.phone}</p>
+          <p className="sub-text">{data.info.address}</p>
         </div>
 
         <div className="review-total">
@@ -43,7 +44,7 @@ function Step6Review({ data }) {
             <p>${data.price}</p>
           </div>
           
-          <p>Payment will be collected at the studio</p>
+          <p>Payment validates appointment</p>
         </div>
       </div>
     </div>

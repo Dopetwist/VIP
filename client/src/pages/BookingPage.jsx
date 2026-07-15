@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { CircleAlert, CircleCheck } from "lucide-react";
 import Toast from "../components/animation/Toast";
@@ -10,6 +10,7 @@ import Step3Date from "../components/ui/Step3Date";
 import Step4Time from "../components/ui/Step4Time";
 import Step5Info from "../components/ui/Step5Info";
 import Step6Review from "../components/ui/Step6Review";
+import Modal from "../components/modal/Modal";
 
 
 export default function BookingPage() {
@@ -17,8 +18,33 @@ export default function BookingPage() {
     const navigate = useNavigate();
 
     const [ currentStep, setCurrentStep ] = useState(1);
+    const [ showModal, setShowModal ] = useState(false);
+    const [ isPaying, setIsPaying ] = useState(false);
 
     const [ toast, setToast ] = useState(null);
+
+    const [ bookingData, setBookingData ] = useState({
+        category: "",
+        service: "",
+        price: "",
+        date: "",
+        time: "",
+        info: {
+            fullName: "",
+            email: "",
+            phone: "",
+            address: ""
+        }
+    });
+
+    /* Effect to disable background scrolling when Modal is open and re-enable it when Modal is closed or component unmounts */
+    useEffect(() => {
+        document.body.style.overflow = showModal ? "hidden" : "auto";
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [showModal]);
     
     const handleToast = (text) => {
         setToast({
@@ -31,18 +57,17 @@ export default function BookingPage() {
         })
     }
 
-    const [ bookingData, setBookingData ] = useState({
-        category: "",
-        service: "",
-        price: "",
-        date: "",
-        time: "",
-        info: {
-            fullName: "",
-            email: "",
-            phone: ""
-        }
-    });
+    /* Function to handle payment */
+    const handlePayment = () => {
+        handleToast("Booking confirmed! You'll receive an email shortly.");
+        setIsPaying(true);
+        setTimeout(() => {
+            navigate("/dashboard", { state: { 
+                data: bookingData,
+                active: "appointments" 
+            } })
+        }, 2000);
+    }
 
     const nextStep = () => {
 
@@ -174,23 +199,26 @@ export default function BookingPage() {
 
                         {currentStep === 6 && (
                             <button 
-                            className="confirm-btn"
-                            onClick={() => {
-                                handleToast("Booking confirmed! You'll receive an email shortly.");
-                                setTimeout(() => {
-                                    navigate("/dashboard", { state: { 
-                                        data: bookingData,
-                                        active: "appointments" 
-                                    } })
-                                }, 2000);
-                            }}
+                            className="pay-btn"
+                            onClick={() => setShowModal(true)}
                             >
-                                {toast ? "Processing..." : "Confirm Booking"}
+                                Pay Now
                             </button>
                         )}
                     </div>
                 </div>
             </div>
+
+            <Modal
+                isOpen={showModal}
+                bookingData={bookingData}
+                title="Checkout"
+                toast={toast}
+                handleToast={handleToast}
+                onConfirm={handlePayment}
+                onCancel={() => setShowModal(false)}
+                isLoading={isPaying}
+            />
 
             {/* Render Toast */}
             {toast && (

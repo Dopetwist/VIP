@@ -1,14 +1,15 @@
 import { useState } from "react";
 
-const initialProfile = {
-    fullName: "Sarah Victor",
-    email: "sarah@example.com",
-    phone: "+1 (555) 014-2847",
-    address: "18 River Street, New York",
-    membership: "Gold Member",
-};
+export default function Profile({ data }) {
 
-export default function Profile() {
+    const initialProfile = {
+        fullName: data.info?.fullName || "Sarah Victor",
+        email: data.info?.email || "sarah@example.com",
+        phone: data.info?.phone || "+1 (555) 014-2847",
+        address: data.info?.address || "59 Agbebi Street, Surulere, Lagos",
+        membership: "Gold Member",
+    };
+
     const [profile, setProfile] = useState(initialProfile);
     const [isEditing, setIsEditing] = useState(false);
 
