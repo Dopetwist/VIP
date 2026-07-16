@@ -4,7 +4,7 @@ import { useCart } from "../../hooks/useCart";
 import BookButton from "./BookButton";
 
 
-function NavIcons({ bookingData }) {
+function NavIcons({ bookingData = {} }) {
 
     const navigate = useNavigate();
     const { getTotalItems } = useCart();
@@ -25,7 +25,10 @@ function NavIcons({ bookingData }) {
                 </div>
                 <User 
                     className="nav-icon"
-                    onClick={() => navigate("/dashboard", { state: { data: bookingData } })}
+                    onClick={() => {
+                        console.log("User icon data is: ", bookingData);
+                        navigate("/dashboard", { state: { data: bookingData } });
+                    }}
                 />
             </div>
 

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import BookButton from "../layout/BookButton";
 
-function HeroSection() {
+function HeroSection({ clearBooking }) {
 
     const navigate = useNavigate();
     
@@ -17,7 +17,10 @@ function HeroSection() {
             <div className="hero-buttons">
                 <button 
                 className="book-button"
-                onClick={() => navigate("/book")}
+                onClick={() => {
+                    clearBooking();
+                    navigate("/book");
+                }}
                 >
                     Book Appointment
                 </button>
