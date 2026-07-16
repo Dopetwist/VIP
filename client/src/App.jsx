@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Routes, Route } from 'react-router';
 import products from './data/products';
 import { CartProvider } from './hooks/useCart';
@@ -36,7 +36,7 @@ function App() {
     [allProducts, filters]
   );
 
-  const [ bookingData, setBookingData ] = useState({
+  const initialBookingData = {
       category: "",
       service: "",
       price: "",
@@ -48,7 +48,9 @@ function App() {
           phone: "",
           address: ""
       }
-  });
+  };
+
+  const [ bookingData, setBookingData ] = useState(initialBookingData);
 
   useEffect(() => {
       const savedBooking = localStorage.getItem('vip-bookings');
@@ -61,10 +63,18 @@ function App() {
       }
   }, []);
 
+  // Clear entire bookings
+  const clearBooking = useCallback(() => {
+    localStorage.setItem("vip-bookings", JSON.stringify(initialBookingData)); // Remove saved booking
+    setBookingData(initialBookingData);      // Reset state
+  }, []);
+
+  console.log("Booking Data in App.jsx:", bookingData);
+
   return (
     <CartProvider>
       <Routes>
-        <Route path="/" element={<HomePage bookingData={bookingData} />} />
+        <Route path="/" element={<HomePage bookingData={bookingData} clearBooking={clearBooking} />} />
 
         <Route element={<Layout />}>
           <Route path="/services" element={<ServicePage />} />

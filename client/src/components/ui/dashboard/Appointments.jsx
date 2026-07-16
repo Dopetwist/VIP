@@ -11,7 +11,7 @@ export default function Appointments({ data = {}, handleToast }) {
         service: data.service || "No service selected",
         date: data.date || "No date selected",
         time: data.time || "No time selected",
-        price: data.price || "N/A",
+        price: data.price || "0.00",
     };
 
     // Format date from YYYY-MM-DD format
