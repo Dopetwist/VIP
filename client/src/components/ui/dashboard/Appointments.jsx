@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Calendar, Clock, MapPin } from "lucide-react";
+import { useBooking } from "../../../context/BookingContext";
 
 
-export default function Appointments({ data = {}, handleToast }) {
+export default function Appointments({ handleToast }) {
+
+    const { bookingData } = useBooking();
 
     const navigate = useNavigate();
 
     const safeData = {
-        service: data.service || "No service selected",
-        date: data.date || "No date selected",
-        time: data.time || "No time selected",
-        price: data.price || "0.00",
+        service: bookingData.service || "No service selected",
+        date: bookingData.date,
+        time: bookingData.time || "No time selected",
+        price: bookingData.price || "0.00",
     };
 
     // Format date from YYYY-MM-DD format
@@ -26,7 +29,7 @@ export default function Appointments({ data = {}, handleToast }) {
         });
     };
 
-    const formattedDate = safeData.date && `${formatDateForDisplay(safeData.date)}`;
+    const formattedDate = safeData.date ? `${formatDateForDisplay(safeData.date)}` : "No date selected";
 
     const [activeTab, setActiveTab] = useState("Upcoming");
 

@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useBooking } from '../../context/BookingContext';
 import Banner from './Banner';
 import Logo from './Logo';
 import Navbar from './Navbar';
 import NavIcons from './NavIcons';
 
-function Header({ bookingData }) {
+function Header() {
+    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { bookingData } = useBooking();
 
     const toggleMenu = () => setIsMenuOpen((prev) => !prev);
     const closeMenu = () => setIsMenuOpen(false);

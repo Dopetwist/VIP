@@ -36,54 +36,20 @@ function App() {
     [allProducts, filters]
   );
 
-  const initialBookingData = {
-      category: "",
-      service: "",
-      price: "",
-      date: "",
-      time: "",
-      info: {
-          fullName: "",
-          email: "",
-          phone: "",
-          address: ""
-      }
-  };
-
-  const [ bookingData, setBookingData ] = useState(initialBookingData);
-
-  useEffect(() => {
-      const savedBooking = localStorage.getItem('vip-bookings');
-      if (savedBooking) {
-          try {
-              setBookingData(JSON.parse(savedBooking));
-          } catch (error) {
-              console.error('Error loading booking data from localStorage:', error);
-          }
-      }
-  }, []);
-
-  // Clear entire bookings
-  const clearBooking = useCallback(() => {
-    localStorage.setItem("vip-bookings", JSON.stringify(initialBookingData)); // Remove saved booking
-    setBookingData(initialBookingData);      // Reset state
-  }, []);
-
-  console.log("Booking Data in App.jsx:", bookingData);
 
   return (
     <CartProvider>
       <Routes>
-        <Route path="/" element={<HomePage bookingData={bookingData} clearBooking={clearBooking} />} />
+        <Route path="/" element={<HomePage />} />
 
         <Route element={<Layout />}>
           <Route path="/services" element={<ServicePage />} />
-          <Route path="/book" element={<BookingPage bookingData={bookingData} setBookingData={setBookingData} />} />
+          <Route path="/book" element={<BookingPage />} />
           <Route path="/shop" element={<ShopPage filteredProducts={filteredProducts} />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/dashboard" element={<Dashboard bookingData={bookingData} />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/cart" element={<CartItem />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/order-success" element={<OrderSuccessPage />} />

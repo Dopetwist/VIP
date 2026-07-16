@@ -9,13 +9,13 @@ import BeforeAfter from "../components/ui/BeforeAfter";
 import Testimonials from "../components/home/Testimonials";
 import CTA from "../components/home/CTA";
 
-function HomePage({ bookingData, clearBooking }) {
+function HomePage() {
     
     return (
 
         <main>
-            <Header bookingData={bookingData} />
-            <HeroSection clearBooking={clearBooking} />
+            <Header />
+            <HeroSection />
             <ServiceSection />
             <WhyChoose />
             <BookingSteps />

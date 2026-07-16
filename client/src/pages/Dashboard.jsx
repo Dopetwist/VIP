@@ -8,12 +8,13 @@ import Orders from "../components/ui/dashboard/Orders";
 import Profile from "../components/ui/dashboard/Profile";
 import Toast from "../components/animation/Toast";
 
-export default function Dashboard({ bookingData }) {
+export default function Dashboard() {
+
     const [activeView, setActiveView] = useState("");
 
     const location = useLocation();
 
-    const serviceData = location?.state?.data;
+   /*  const serviceData = location?.state?.data; */
     const activeState = location?.state?.active;
 
     const [ toast, setToast ] = useState(null);
@@ -35,16 +36,13 @@ export default function Dashboard({ bookingData }) {
     const renderPanel = () => {
         switch (activeView) {
             case "appointments":
-                return <Appointments data={serviceData} handleToast={handleToast} />;
+                return <Appointments handleToast={handleToast} />;
             case "orders":
                 return <Orders />;
             case "profile":
-                return <Profile data={bookingData} />;
+                return <Profile />;
             default:
-                return <DashboardOverview 
-                            onNavigate={setActiveView}
-                            data={serviceData}
-                        />;
+                return <DashboardOverview onNavigate={setActiveView} />;
         }
     };
 
@@ -54,7 +52,6 @@ export default function Dashboard({ bookingData }) {
                 <UserAccount 
                     activeView={activeView} 
                     onNavigate={setActiveView}
-                    data={bookingData}
                 />
                 <div className="dashboard-content-panel">{renderPanel()}</div>
             </div>

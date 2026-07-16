@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { CircleAlert, CircleCheck } from "lucide-react";
+import { useBooking } from "../context/BookingContext";
 import Toast from "../components/animation/Toast";
 
 import BookingProgress from "../components/ui/BookingProgress";
@@ -13,7 +14,7 @@ import Step6Review from "../components/ui/Step6Review";
 import Modal from "../components/modal/Modal";
 
 
-export default function BookingPage({ bookingData, setBookingData }) {
+export default function BookingPage() {
 
     const navigate = useNavigate();
 
@@ -22,6 +23,8 @@ export default function BookingPage({ bookingData, setBookingData }) {
     const [ isPaying, setIsPaying ] = useState(false);
 
     const [ toast, setToast ] = useState(null);
+
+    const { bookingData, setBookingData } = useBooking();
 
     /* Effect to disable background scrolling when Modal is open and re-enable it when Modal is closed or component unmounts */
     useEffect(() => {
@@ -49,7 +52,6 @@ export default function BookingPage({ bookingData, setBookingData }) {
         setIsPaying(true);
         setTimeout(() => {
             navigate("/dashboard", { state: { 
-                data: bookingData,
                 active: "appointments" 
             } })
         }, 2000);

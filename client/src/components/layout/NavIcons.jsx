@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router";
 import { ShoppingCart, User } from "lucide-react";
 import { useCart } from "../../hooks/useCart";
+import { useBooking } from "../../context/BookingContext";
 import BookButton from "./BookButton";
 
 
-function NavIcons({ bookingData = {} }) {
+function NavIcons() {
 
     const navigate = useNavigate();
     const { getTotalItems } = useCart();
+    const { bookingData } = useBooking();
     const cartCount = getTotalItems();
     
     return (
@@ -25,10 +27,7 @@ function NavIcons({ bookingData = {} }) {
                 </div>
                 <User 
                     className="nav-icon"
-                    onClick={() => {
-                        console.log("User icon data is: ", bookingData);
-                        navigate("/dashboard", { state: { data: bookingData } });
-                    }}
+                    onClick={() => navigate("/dashboard")}
                 />
             </div>
 
