@@ -17,20 +17,20 @@ const initialBookingData = {
 };
 
 export function BookingProvider({ children }) {
-    const [bookingData, setBookingData] = useState(initialBookingData);
 
-    // Load booking from localStorage
-    useEffect(() => {
-        const savedBooking = localStorage.getItem("vip-bookings");
+    // Initialize state directly from localStorage to prevent page refresh reset
+    const [bookingData, setBookingData] = useState(() => {
+        try {
+            const savedBooking = localStorage.getItem("vip-bookings");
 
-        if (savedBooking) {
-            try {
-                setBookingData(JSON.parse(savedBooking));
-            } catch (error) {
-                console.error("Error loading booking:", error);
-            }
+            return savedBooking
+                ? JSON.parse(savedBooking)
+                : initialBookingData;
+        } catch (error) {
+            console.error("Error loading booking:", error);
+            return initialBookingData;
         }
-    }, []);
+    });
 
     // Persist booking whenever it changes
     useEffect(() => {
