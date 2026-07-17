@@ -1,7 +1,20 @@
+import { useState } from "react";
+import { CircleAlert } from "lucide-react";
+import Toast from "../components/animation/Toast";
+
 function ContactPage() {
+
+    const [ toast, setToast ] = useState(null);
+        
+    const handleToast = () => {
+        setToast({
+            message: <span className="circle-check"><CircleAlert className="circle-icon" /> Form submission coming soon!</span>
+        })
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        handleToast();
     }
 
     return (
@@ -97,6 +110,14 @@ function ContactPage() {
                     />
                 </div>
             </div>
+
+            {/* Render Toast */}
+            {toast && (
+                <Toast
+                    message={toast.message}
+                    onClose={() => setToast(null)}
+                />
+            )}
         </section>
     )
 }
