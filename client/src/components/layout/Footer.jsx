@@ -1,4 +1,4 @@
-import { HashLink } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
     
@@ -20,10 +20,10 @@ function Footer() {
                     <div className="footer-link-box">
                         <h3>Quick Links</h3>
 
-                        <HashLink smooth to={"/services"} className="anchor-link">Services</HashLink>
-                        <HashLink smooth to={"/book"} className="anchor-link">Book Appointment</HashLink>
-                        <HashLink smooth to={"/shop"} className="anchor-link">Shop Products</HashLink>
-                        <HashLink smooth to={"/gallery"} className="anchor-link">Gallery</HashLink>
+                        <NavLink to={"/services"} className="anchor-link">Services</NavLink>
+                        <NavLink to={"/book"} className="anchor-link">Book Appointment</NavLink>
+                        <NavLink to={"/shop"} className="anchor-link">Shop Products</NavLink>
+                        <NavLink to={"/gallery"} className="anchor-link">Gallery</NavLink>
                     </div>
 
                     <div className="footer-link-box">
@@ -39,13 +39,13 @@ function Footer() {
                         <h3>Reach Out to Us</h3>
 
                         <p className="footer-contact-p">
-                            123 Beauty Lane <br />
+                            Orchid road, <br />
 
-                            New York, NY 10001 <br />
+                            Lekki, Lagos. <br />
 
-                            (555) 123-4567 <br />
+                            +234 810 277 0927 <br />
 
-                            info@vipbeauty.com
+                            victoriaokorie1234@gmail.com
                         </p>
                     </div>
                 </div>

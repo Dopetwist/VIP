@@ -1,7 +1,5 @@
-import Header from "../components/layout/Header";
 import HeroSection from "../components/home/HeroSection";
 import ServiceSection from "../components/home/ServiceSection";
-import Footer from "../components/layout/Footer";
 import WhyChoose from "../components/home/WhyChoose";
 import BookingSteps from "../components/home/BookingSteps";
 import FeaturedProducts from "../components/home/FeaturedProducts";
@@ -14,7 +12,6 @@ function HomePage() {
     return (
 
         <main>
-            <Header />
             <HeroSection />
             <ServiceSection />
             <WhyChoose />
@@ -23,7 +20,6 @@ function HomePage() {
             <BeforeAfter />
             <Testimonials />
             <CTA />
-            <Footer />
         </main>
     )
 }

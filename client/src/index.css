@@ -119,7 +119,8 @@ section {
 }
 
 #nav-book-btn {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .nav-links {
@@ -3660,7 +3661,8 @@ footer p,
     }
 
     .header {
-        padding: 0.8rem 1rem;
+        position: relative;
+        padding: 0.8rem 2rem;
         flex-wrap: wrap;
         gap: 1rem;
     }
@@ -3669,24 +3671,39 @@ footer p,
         display: none;
     }
 
+    .menu-cart-container {
+        gap: 1rem;
+    }
+
     .menu-toggle {
         display: inline-flex;
     }
 
     #nav-book-btn {
-        display: block;
         width: 100%;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 1rem;
     }
 
     .navbar {
-        display: none;
         width: 100%;
-        order: 3;
+        background: var(--luxury-beige);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: .3s ease;
+        z-index: 100;
     }
 
     .navbar.open {
-        display: block;
-        padding: 1rem;
+        padding: 2rem;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .nav-links {
@@ -3703,7 +3720,7 @@ footer p,
     }
 
     .nav-icons {
-        gap: 0.4rem;
+        gap: 1rem;
     }
 
     .hero-section {
@@ -4192,6 +4209,7 @@ footer p,
     }
 
     .header {
+        position: relative;
         padding: 0.8rem 1rem;
         flex-wrap: wrap;
         gap: 1rem;
@@ -4206,19 +4224,30 @@ footer p,
     }
 
     #nav-book-btn {
-        display: block;
         width: 100%;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 1rem;
     }
 
     .navbar {
-        display: none;
         width: 100%;
-        order: 3;
+        background: var(--luxury-beige);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: .3s ease;
+        z-index: 100;
     }
 
     .navbar.open {
-        display: block;
-        padding: 1rem;
+        padding: 2rem 1rem;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .nav-links {
