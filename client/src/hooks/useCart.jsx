@@ -5,19 +5,20 @@ const CartContext = createContext();
 
 // CartProvider Component
 export function CartProvider({ children }) {
-    const [cartItems, setCartItems] = useState([]);
 
-    // Initialize cart from localStorage
-    useEffect(() => {
-        const savedCart = localStorage.getItem('vip-cart');
-        if (savedCart) {
-            try {
-                setCartItems(JSON.parse(savedCart));
-            } catch (error) {
-                console.error('Error loading cart from localStorage:', error);
-            }
+    // Initialize state directly from localStorage to prevent page refresh reset
+    const [cartItems, setCartItems] = useState(() => {
+        try {
+            const savedCart = localStorage.getItem('vip-cart');
+
+            return savedCart
+                ? JSON.parse(savedCart)
+                : [];
+        } catch (error) {
+            console.error('Error loading cart from localStorage:', error);
+            return [];
         }
-    }, []);
+    });
 
     // Save cart to localStorage whenever it changes
     useEffect(() => {

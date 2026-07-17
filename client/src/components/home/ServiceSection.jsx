@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import {  HashLink } from "react-router-hash-link";
 import { ArrowRight, Clock } from "lucide-react";
+import { useBooking } from "../../context/BookingContext";
 import services from "../../data/services";
 
 const serviceArray = [
@@ -29,6 +30,7 @@ const serviceArray = [
 
 function ServiceSection() {
 
+    const { clearBooking } = useBooking();
     const navigate = useNavigate();
     
     return (
@@ -75,7 +77,10 @@ function ServiceSection() {
                             <button 
                             type="button" 
                             className="service-book-btn"
-                            onClick={() => navigate("/book")}
+                            onClick={() => {
+                                clearBooking();
+                                navigate("/book");
+                            }}
                             >
                                 Book Now
                             </button>

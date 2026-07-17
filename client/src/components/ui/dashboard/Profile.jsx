@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { useBooking } from "../../../context/BookingContext";
 
-export default function Profile({ data }) {
+export default function Profile() {
+
+    const { bookingData } = useBooking();
 
     const initialProfile = {
-        fullName: data.info?.fullName || "Sarah Victor",
-        email: data.info?.email || "sarah@example.com",
-        phone: data.info?.phone || "+234 123 456 7890",
-        address: data.info?.address || "59 Agbebi Street, Surulere, Lagos",
+        fullName: bookingData.info?.fullName || "Sarah Victor",
+        email: bookingData.info?.email || "sarah@example.com",
+        phone: bookingData.info?.phone || "+234 123 456 7890",
+        address: bookingData.info?.address || "59 Agbebi Street, Surulere, Lagos",
         membership: "Gold Member",
     };
 

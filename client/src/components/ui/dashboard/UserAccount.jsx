@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { LayoutDashboard, Calendar, Package, User, LogOut } from "lucide-react";
+import { useBooking } from "../../../context/BookingContext";
 
 const menuItems = [
     { key: "overview", label: "Overview", icon: LayoutDashboard },
@@ -8,9 +9,12 @@ const menuItems = [
     { key: "profile", label: "Profile", icon: User },
 ];
 
-export default function UserAccount({ activeView, onNavigate, data = {} }) {
+export default function UserAccount({ activeView, onNavigate }) {
 
-    const user = data.info.fullName;
+    const { bookingData } = useBooking();
+
+    const user = bookingData.info?.fullName || "Sarah Victor";
+    const userEmail = bookingData.info?.email || "sarah@example.com";
 
     // Get the initial letters of user's names
     const names = user.trim().split(/\s+/).slice(0, 2);
@@ -23,7 +27,7 @@ export default function UserAccount({ activeView, onNavigate, data = {} }) {
                     <div className="account-avatar">{initials}</div>
                     <div>
                         <h2>{user}</h2>
-                        <p>{data.info.email}</p>
+                        <p>{userEmail}</p>
                     </div>
                 </div>
 

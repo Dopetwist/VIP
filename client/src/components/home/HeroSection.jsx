@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router";
+import { useBooking } from "../../context/BookingContext";
 import BookButton from "../layout/BookButton";
 
-function HeroSection({ clearBooking }) {
+function HeroSection() {
 
+    const { clearBooking } = useBooking();
     const navigate = useNavigate();
     
     return (
