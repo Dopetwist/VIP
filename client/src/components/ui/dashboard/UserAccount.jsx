@@ -13,7 +13,6 @@ const menuItems = [
 export default function UserAccount({ activeView, onNavigate }) {
 
     const { bookingData, clearBooking } = useBooking();
-
     const navigate = useNavigate();
 
     const user = bookingData.info?.fullName || "Sarah Victor";

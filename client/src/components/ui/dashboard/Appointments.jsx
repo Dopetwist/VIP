@@ -7,7 +7,6 @@ import { useBooking } from "../../../context/BookingContext";
 export default function Appointments({ handleToast }) {
 
     const { bookingData } = useBooking();
-
     const navigate = useNavigate();
 
     const safeData = {
