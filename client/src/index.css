@@ -3662,7 +3662,7 @@ footer p,
 
     .header {
         position: relative;
-        padding: 0.8rem 2rem;
+        padding: 0.8rem 1rem;
         flex-wrap: wrap;
         gap: 1rem;
     }
