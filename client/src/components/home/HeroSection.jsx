@@ -5,7 +5,6 @@ import BookButton from "../layout/BookButton";
 function HeroSection() {
 
     const { clearBooking } = useBooking();
-
     const navigate = useNavigate();
     
     return (

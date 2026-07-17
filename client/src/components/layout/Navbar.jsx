@@ -1,10 +1,11 @@
 import { useNavigate, useLocation } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
+import { useBooking } from '../../context/BookingContext';
 
 function Navbar({ isOpen = false, onLinkClick }) {
 
+    const { clearBooking } = useBooking();
     const location = useLocation();
-
     const navigate = useNavigate();
 
     const links = [
@@ -36,6 +37,7 @@ function Navbar({ isOpen = false, onLinkClick }) {
             id="nav-book-btn"
             className="book-button"
             onClick={() => {
+                clearBooking();
                 navigate("/book");
                 onLinkClick();
             }}
