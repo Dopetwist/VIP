@@ -70,21 +70,21 @@ function ContactPage() {
                         <div className="contact-detail">
                             <p className="contact-detail-title">Location</p>
                             <p className="contact-detail-text">
-                                123 Luxury Avenue, Suite 200<br />Los Angeles, CA 90017
+                                Orchid road<br />Lekki, Lagos.
                             </p>
                         </div>
 
                         <div className="contact-detail">
                             <p className="contact-detail-title">Phone</p>
                             <p className="contact-detail-text">
-                                Main: (310) 555-0147<br />Appointments: (310) 555-0199
+                                +234 810 277 0927
                             </p>
                         </div>
 
                         <div className="contact-detail">
                             <p className="contact-detail-title">Email</p>
                             <p className="contact-detail-text">
-                                hello@vipstudio.com<br />support@vipstudio.com
+                                victoriaokorie1234@gmail.com
                             </p>
                         </div>
 

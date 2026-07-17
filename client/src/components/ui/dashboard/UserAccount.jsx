@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
 import { LayoutDashboard, Calendar, Package, User, LogOut } from "lucide-react";
 import { useBooking } from "../../../context/BookingContext";
 
@@ -11,7 +12,9 @@ const menuItems = [
 
 export default function UserAccount({ activeView, onNavigate }) {
 
-    const { bookingData } = useBooking();
+    const { bookingData, clearBooking } = useBooking();
+
+    const navigate = useNavigate();
 
     const user = bookingData.info?.fullName || "Sarah Victor";
     const userEmail = bookingData.info?.email || "sarah@example.com";
@@ -50,7 +53,10 @@ export default function UserAccount({ activeView, onNavigate }) {
                     <button 
                     type="button" 
                     className="sidebar-nav-item logout" 
-                    onClick={() => window.location.href = "/"}
+                    onClick={() => {
+                        navigate("/");
+                        clearBooking();
+                    }}
                     >
                         <LogOut size={18} />
                         <span>Logout</span>

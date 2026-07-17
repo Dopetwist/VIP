@@ -17,6 +17,11 @@ function Header() {
     // Close open navbar on scroll
     useEffect(() => {
         window.addEventListener("scroll", closeMenu);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener("scroll", closeMenu);
+        }
     }, []);
 
     return (

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Routes, Route } from 'react-router';
 import products from './data/products';
 import { CartProvider } from './hooks/useCart';
@@ -40,9 +40,8 @@ function App() {
   return (
     <CartProvider>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-
         <Route element={<Layout />}>
+          <Route path="/" index element={<HomePage />} />
           <Route path="/services" element={<ServicePage />} />
           <Route path="/book" element={<BookingPage />} />
           <Route path="/shop" element={<ShopPage filteredProducts={filteredProducts} />} />

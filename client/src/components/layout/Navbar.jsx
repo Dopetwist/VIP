@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router';
-import { HashLink } from 'react-router-hash-link';
+import { NavLink } from "react-router-dom";
 import { useBooking } from '../../context/BookingContext';
 
 function Navbar({ isOpen = false, onLinkClick }) {
@@ -17,19 +18,21 @@ function Navbar({ isOpen = false, onLinkClick }) {
         { to: '/contact', label: 'Contact', path: '/contact' },
     ];
 
+    useEffect(() => {
+        onLinkClick();
+    }, [location.pathname]);
+
     return (
         <nav id="navbar" className={`navbar ${isOpen ? 'open' : ''}`}>
             <div className="nav-links">
                 {links.map((link) => (
-                    <HashLink
+                    <NavLink
                         key={link.path}
-                        smooth
                         to={link.to}
                         className={`link body-text ${location.pathname === link.path ? 'active' : ''}`}
-                        onClick={onLinkClick}
                     >
                         {link.label}
-                    </HashLink>
+                    </NavLink>
                 ))}
             </div>
 
@@ -39,7 +42,6 @@ function Navbar({ isOpen = false, onLinkClick }) {
             onClick={() => {
                 clearBooking();
                 navigate("/book");
-                onLinkClick();
             }}
             >
                 Book Now
