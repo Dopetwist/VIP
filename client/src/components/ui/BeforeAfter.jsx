@@ -6,8 +6,8 @@ function BeforeAfter() {
     
     return (
 
-        <section>
-            <main className={`${location.pathname === "/gallery" ? "before-after-section" : ""}`}>
+        <section className={location.pathname === "/gallery" ? "gallery-page-before-after" : ""}>
+            <main className={location.pathname === "/gallery" ? "before-after-section" : ""}>
                 <div className="service-header">
                     {location.pathname === "/" && <span className="section-span">05 - The Gallery</span>}
 
