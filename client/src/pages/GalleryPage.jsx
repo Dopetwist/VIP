@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { revealLeft } from "../utils/reveal";
 import works from "../data/gallery";
 import GalleryGrid from "../components/ui/GalleryGrid";
 import BeforeAfter from "../components/ui/BeforeAfter";
@@ -18,6 +19,10 @@ function GalleryPage() {
         "Nails",
         "Eyebrows"
     ]
+
+    useEffect(() => {
+        revealLeft(".services-tab-container");
+    }, []);
     
     return (
 

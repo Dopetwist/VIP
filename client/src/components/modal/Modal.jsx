@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { X, CircleCheckBig, ArrowLeft } from "lucide-react";
+import { X } from "lucide-react";
 
 function Modal({ isOpen, bookingData, title, onCancel, onConfirm, isLoading = false }) {
 
@@ -10,6 +10,12 @@ function Modal({ isOpen, bookingData, title, onCancel, onConfirm, isLoading = fa
     return (
         <div className="modal-overlay" onClick={onCancel}>
             <div className="modal" onClick={(e) => e.stopPropagation()}>
+                <div 
+                className="close-btn"
+                onClick={onCancel}
+                >
+                    <X size={26} color="#0a0a0a" />
+                </div>
 
                 <div className="transfer-container">
                     <h2 className="heading-text">Bank Transfer</h2>

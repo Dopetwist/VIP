@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { Clock, CircleAlert } from "lucide-react";
 import { useBooking } from "../context/BookingContext";
+import { revealTop, revealBottom } from "../utils/reveal";
 import services from "../data/services";
+import Toast from "../components/animation/Toast";
 
 function ServicePage() {
 
     const [ activeTab, setActiveTab ] = useState("All");
+    const [ toast, setToast ] = useState(null);
     const { clearBooking } = useBooking();
     const location = useLocation();
     const serviceTab = location.state || "All";
@@ -22,6 +25,20 @@ function ServicePage() {
         "Tattoos",
         "Nails"
     ]
+    
+    const handleToast = () => {
+        setToast({
+            message: <span className="circle-check">
+                        <CircleAlert className="circle-icon" />
+                        Details feature coming soon!
+                    </span>
+        })
+    }
+
+    useEffect(() => {
+        revealTop(".page-header h2");
+        revealBottom(".page-header p");
+    }, []);
 
     useEffect(() => {
         if (serviceTab) {
@@ -91,6 +108,7 @@ function ServicePage() {
                                         <button 
                                         type="button" 
                                         className="service-details-btn"
+                                        onClick={handleToast}
                                         >
                                             Details
                                         </button>
@@ -100,6 +118,14 @@ function ServicePage() {
                     )
                 }
             </div>
+
+            {/* Render Toast */}
+            {toast && (
+                <Toast
+                    message={toast.message}
+                    onClose={() => setToast(null)}
+                />
+            )}
 
         </div>
     )

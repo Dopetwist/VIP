@@ -1,7 +1,13 @@
+import { useEffect } from "react";
+import { revealCards } from "../../utils/reveal";
 import { Award, Heart, Shield, Users } from "lucide-react";
 
 
 function OurValues() {
+
+    useEffect(() => {
+        revealCards(".value-card");
+    }, []);
     
     return (
 

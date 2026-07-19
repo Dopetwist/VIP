@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useBooking } from "../../context/BookingContext";
+import { revealBottom } from "../../utils/reveal";
 
 function CTA() {
 
     const { clearBooking } = useBooking();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        revealBottom(".cta-container");
+    }, []);
     
     return (
 

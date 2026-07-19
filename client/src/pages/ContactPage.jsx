@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CircleAlert } from "lucide-react";
+import { revealLeft, revealRight, revealBottom } from "../utils/reveal";
 import Toast from "../components/animation/Toast";
 
 function ContactPage() {
@@ -16,6 +17,12 @@ function ContactPage() {
         e.preventDefault();
         handleToast();
     }
+
+    useEffect(() => {
+        revealLeft(".contact-header h2");
+        revealRight(".contact-header p");
+        revealBottom(".contact-map-card");
+    }, []);
 
     return (
         <section className="contact-page">

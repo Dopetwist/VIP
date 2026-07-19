@@ -61,6 +61,8 @@ export default function BookingPage() {
 
     const nextStep = () => {
 
+        window.scrollTo(0, 0); // Scroll to top on next step
+
         switch (currentStep) {
             case 1:
                 if (!bookingData.category) {

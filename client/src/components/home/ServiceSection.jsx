@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import {  HashLink } from "react-router-hash-link";
 import { ArrowRight, Clock } from "lucide-react";
 import { useBooking } from "../../context/BookingContext";
+import { revealCards } from "../../utils/reveal";
 import services from "../../data/services";
 
 const serviceArray = [
@@ -32,6 +34,10 @@ function ServiceSection() {
 
     const { clearBooking } = useBooking();
     const navigate = useNavigate();
+
+    useEffect(() => {
+      revealCards(".service-card");
+    }, []);
     
     return (
 

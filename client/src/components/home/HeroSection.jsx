@@ -14,7 +14,7 @@ function HeroSection() {
 
             <h1>Elevate Your Natural Beauty</h1>
 
-            <p>Experience luxury beauty treatments at VIP Beauty Studio. From stunning lash extensions to flawless permanent makeup and exquisite nail art.</p>
+            <p>Experience luxury beauty treatments at VIP Beauty Studio. From stunning lash extensions to flawless tattoos and exquisite nail art.</p>
 
             <div className="hero-buttons">
                 <button 

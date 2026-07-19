@@ -6,7 +6,7 @@ import { useBooking } from "../../../context/BookingContext";
 
 export default function Appointments({ handleToast }) {
 
-    const { bookingData } = useBooking();
+    const { bookingData, clearBooking } = useBooking();
     const navigate = useNavigate();
 
     const safeData = {
@@ -72,7 +72,10 @@ export default function Appointments({ handleToast }) {
                 <button 
                 type="button" 
                 className="primary-button"
-                onClick={() => navigate("/book")}
+                onClick={() => {
+                    clearBooking();
+                    navigate("/book");
+                }}
                 >
                     Book New
                 </button>
@@ -138,7 +141,10 @@ export default function Appointments({ handleToast }) {
                         <button 
                         type="button" 
                         className="book-again-button"
-                        onClick={() => navigate("/book")}
+                        onClick={() => {
+                            clearBooking();
+                            navigate("/book");
+                        }}
                         >
                             Book again
                         </button>
