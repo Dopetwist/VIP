@@ -1,8 +1,14 @@
+import { useEffect } from "react";
+import { revealBottom } from "../utils/reveal";
 import Certified from "../components/ui/Certified";
 import OurValues from "../components/ui/OurValues";
 
 
 function AboutPage() {
+
+    useEffect(() => {
+        revealBottom(".our-story");
+    }, []);
     
     return (
 

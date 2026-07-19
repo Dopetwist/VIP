@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { Clock, CircleAlert } from "lucide-react";
 import { useBooking } from "../context/BookingContext";
+import { revealTop, revealBottom } from "../utils/reveal";
 import services from "../data/services";
 import Toast from "../components/animation/Toast";
 
@@ -33,6 +34,11 @@ function ServicePage() {
                     </span>
         })
     }
+
+    useEffect(() => {
+        revealTop(".page-header h2");
+        revealBottom(".page-header p");
+    }, []);
 
     useEffect(() => {
         if (serviceTab) {
