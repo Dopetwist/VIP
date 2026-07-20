@@ -63,6 +63,15 @@ section {
     font-size: 0.9rem;
 }
 
+.tel p,
+.footer-contact-p,
+.contact-detail-text,
+.sub-text,
+.account-email,
+.profile-summary-card p {
+    text-decoration: none;
+}
+
 .logo-section {
     width: fit-content;
     display: flex;
@@ -3648,11 +3657,12 @@ footer p,
     }
 
     .toast-container {
-        width: 40%;
+        width: 60%;
     }
 
+    .cart-content,
     .checkout-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
 

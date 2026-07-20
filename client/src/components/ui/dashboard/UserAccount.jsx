@@ -29,7 +29,7 @@ export default function UserAccount({ activeView, onNavigate }) {
                     <div className="account-avatar">{initials}</div>
                     <div>
                         <h2>{user}</h2>
-                        <p>{userEmail}</p>
+                        <p className="account-email">{userEmail}</p>
                     </div>
                 </div>
 
