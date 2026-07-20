@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { revealRight } from "../../utils/reveal";
+import { revealBottom } from "../../utils/reveal";
 
 const testimonials = [
     {
@@ -31,7 +31,7 @@ const testimonials = [
 function Testimonials() {
 
     useEffect(() => {
-        revealRight(".testimonial-container");
+        revealBottom(".testimonial-container");
     }, []);
     
     return (

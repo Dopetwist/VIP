@@ -41,6 +41,7 @@ function Navbar({ isOpen = false, onLinkClick }) {
             className="book-button"
             onClick={() => {
                 clearBooking();
+                onLinkClick();
                 navigate("/book");
             }}
             >
