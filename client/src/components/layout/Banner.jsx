@@ -14,11 +14,11 @@ function Banner() {
         <main className="banner">
             <div className="tel">
                 <Phone size={isMobile ? 22 : 16} />
-                <p>08102770927</p>
+                <p>08012345678</p>
             </div>
 
             <div className="socials">
-                <SocialIcon url="https://www.tiktok.com/@realvictoriaokorie?_r=1&_t=ZS-9870CUBFdzk" bgColor="#000" className="social-icon" style={{width: width, height: height}} label="Our TikTok" target="_blank" />
+                <SocialIcon url="https://www.tiktok.com" bgColor="#000" className="social-icon" style={{width: width, height: height}} label="Our TikTok" target="_blank" />
                 <SocialIcon url="https://www.whatsapp.com" bgColor="#000" className="social-icon" style={{width: width, height: height}} label="Our WhatsApp" target="_blank" />
             </div>
         </main>

@@ -85,7 +85,7 @@ section {
 }
 
 .logo-section figure {
-    width: 5rem;
+    width: 4rem;
     margin-bottom: 0.5rem;
 }
 
@@ -96,7 +96,7 @@ section {
 
 .logo-section p {
     font-family: var(--font-inter);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
 }
 
@@ -126,11 +126,6 @@ section {
 .nav-icons .nav-icon:hover {
     cursor: pointer;
     color: var(--luxury-gold);
-}
-
-#nav-book-btn {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .nav-links {
@@ -930,7 +925,7 @@ footer p,
 }
 
 .footer-logo figure {
-    width: 8rem;
+    width: 6rem;
 }
 
 .footer-logo figure img {
@@ -3479,6 +3474,73 @@ footer p,
    RESPONSIVE DESIGN - STANDARD MEDIA QUERIES
    ==================================================================== */
 
+@media (min-width: 769px) and (max-width: 850px) {
+
+    #header-book-btn {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    #nav-book-btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .navbar {
+        width: 100%;
+        background: var(--luxury-beige);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: .3s ease;
+        z-index: 100;
+    }
+
+    .navbar.open {
+        flex-direction: column;
+        padding: 2rem;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+        border-top: 0.06rem solid var(--border);
+    }
+
+    .nav-icon-container {
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    .nav-icons {
+        gap: 1rem;
+    }
+
+    .service-page,
+    .shop-page,
+    .gallery-page,
+    .about-page,
+    .contact-page,
+    .booking-section,
+    .dashboard-page,
+    .cart-section,
+    .checkout-section,
+    .order-success-section {
+        padding: 35% 1rem 4rem !important;
+    }
+}
+
 /* Extra Large Devices (1920px and above) */
 @media (min-width: 1920px) {
 
@@ -3518,7 +3580,7 @@ footer p,
     .cart-section,
     .checkout-section,
     .order-success-section {
-        padding: 16% 1rem 4rem;
+        padding: 20% 1rem 4rem;
     }
 
     .sort {
@@ -3545,10 +3607,6 @@ footer p,
 /* Tablets and Large Tablets (769px to 1199px) */
 @media (min-width: 769px) and (max-width: 1199px) {
 
-    .site-top {
-        position: static;
-    }
-
     .banner {
         font-size: 0.8rem;
     }
@@ -3567,7 +3625,6 @@ footer p,
     }
 
     .hero-section {
-        min-height: 80vh;
         padding: 6.5rem 5% 5rem;
     }
 
@@ -3617,8 +3674,12 @@ footer p,
     .gallery-page,
     .about-page,
     .contact-page,
-    .booking-section {
-        padding: 6% 1rem 4rem;
+    .booking-section,
+    .dashboard-page,
+    .cart-section,
+    .checkout-section,
+    .order-success-section {
+        padding: 25% 1rem 4rem;
     }
 
     .booking-page-container {
@@ -3668,9 +3729,6 @@ footer p,
 
 /* Mobile Landscape (481px to 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-    .site-top {
-        position: static;
-    }
 
     .banner {
         font-size: 0.8rem;
@@ -3707,8 +3765,6 @@ footer p,
 
     #nav-book-btn {
         width: 100%;
-        visibility: visible;
-        opacity: 1;
         margin-top: 1rem;
     }
 
@@ -3726,6 +3782,7 @@ footer p,
     }
 
     .navbar.open {
+        flex-direction: column;
         padding: 2rem;
         opacity: 1;
         visibility: visible;
@@ -3750,7 +3807,6 @@ footer p,
     }
 
     .hero-section {
-        min-height: 80vh;
         padding: 6.5rem 5% 5rem;
     }
 
@@ -3785,10 +3841,6 @@ footer p,
 
     .buttons-box .service-details-btn {
         font-size: 0.9rem;
-    }
-
-    .cart-section {
-        min-height: 70vh;
     }
 
     .product-card button,
@@ -3839,8 +3891,12 @@ footer p,
     .gallery-page,
     .about-page,
     .contact-page,
-    .booking-section {
-        padding: 13% 1rem 4rem;
+    .booking-section,
+    .dashboard-page,
+    .cart-section,
+    .checkout-section,
+    .order-success-section {
+        padding: 40% 1rem 4rem;
     }
 
     .appointment-tab-item {
@@ -4247,16 +4303,11 @@ footer p,
 /* Small Mobile Devices (Below 480px) */
 @media (max-width: 480px) {
 
-    .site-top {
-        position: static;
-    }
-
     .banner {
         padding: 0.45rem 1rem;
     }
 
     .header {
-        position: relative;
         padding: 0.8rem 1rem;
         flex-wrap: wrap;
         gap: 1rem;
@@ -4272,8 +4323,6 @@ footer p,
 
     #nav-book-btn {
         width: 100%;
-        visibility: visible;
-        opacity: 1;
         margin-top: 1rem;
     }
 
@@ -4291,6 +4340,7 @@ footer p,
     }
 
     .navbar.open {
+        flex-direction: column;
         padding: 2rem 1rem;
         opacity: 1;
         visibility: visible;
@@ -4309,7 +4359,6 @@ footer p,
     }
 
     .hero-section {
-        min-height: 70vh;
         padding: 6.5rem 5% 5rem;
     }
 
@@ -4335,17 +4384,17 @@ footer p,
         font-weight: 500;
     }
 
+    .logo-section figure {
+        width: 3rem;
+    }
+
     .logo-section p {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
     }
 
     .menu-toggle {
         width: 2.5rem;
         height: 2.5rem;
-    }
-
-    .cart-section {
-        min-height: 70vh;
     }
 
     .cart-container p {
@@ -4516,8 +4565,12 @@ footer p,
     .gallery-page,
     .about-page,
     .contact-page,
-    .booking-section {
-        padding: 13% 1rem 4rem;
+    .booking-section,
+    .dashboard-page,
+    .cart-section,
+    .checkout-section,
+    .order-success-section {
+        padding: 45% 1rem 4rem;
     }
 
     .page-header h2 {
@@ -4803,5 +4856,30 @@ footer p,
 
     .footer-link-box {
         margin-top: 2rem;
+    }
+
+    .footer-logo figure {
+        width: 5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-logo h2 {
+        font-size: 1.1rem;
+        letter-spacing: 0.05rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .service-page,
+    .shop-page,
+    .gallery-page,
+    .about-page,
+    .contact-page,
+    .booking-section,
+    .dashboard-page,
+    .cart-section,
+    .checkout-section,
+    .order-success-section {
+        padding: 55% 1rem 4rem;
     }
 }

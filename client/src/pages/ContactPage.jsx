@@ -77,21 +77,21 @@ function ContactPage() {
                         <div className="contact-detail">
                             <p className="contact-detail-title">Location</p>
                             <p className="contact-detail-text">
-                                Orchid road<br />Lekki, Lagos.
+                                Munalux road <br /> Lekki, Lagos.
                             </p>
                         </div>
 
                         <div className="contact-detail">
                             <p className="contact-detail-title">Phone</p>
                             <p className="contact-detail-text">
-                                +234 810 277 0927
+                                +234 123 456 7890
                             </p>
                         </div>
 
                         <div className="contact-detail">
                             <p className="contact-detail-title">Email</p>
                             <p className="contact-detail-text">
-                                victoriaokorie1234@gmail.com
+                                vipbeautystudio21@gmail.com
                             </p>
                         </div>
 

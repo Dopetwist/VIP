@@ -8,7 +8,7 @@ function Footer() {
             <div className="footer-container">
                 <div className="footer-logo">
                     <figure>
-                        <img src="/images/VIP-Logo.jpeg" alt="VIP Logo" />
+                        <img src="/images/VIP-header-logo.png" alt="VIP Logo" />
                     </figure>
 
                     <h2>Beauty Studio</h2>
@@ -39,13 +39,13 @@ function Footer() {
                         <h3>Reach Out to Us</h3>
 
                         <p className="footer-contact-p">
-                            Orchid road, <br />
+                            Munalux road, <br />
 
                             Lekki, Lagos. <br />
 
-                            +234 810 277 0927 <br />
+                            +234 123 456 7890 <br />
 
-                            victoriaokorie1234@gmail.com
+                            vipbeautystudio21@gmail.com
                         </p>
                     </div>
                 </div>
