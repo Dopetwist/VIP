@@ -28,6 +28,8 @@ cd VIP
 
 npm install
 
+cd client
+
 npm run dev
 ```
 
