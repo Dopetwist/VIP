@@ -22,9 +22,9 @@ function Modal({ isOpen, bookingData, title, onCancel, onConfirm, isLoading = fa
                     <p className="transfer-header-sub">Please transfer the total amount of <span><strong>${bookingData.price}</strong></span> to the below account!</p>
 
                     <div className="company-account">
-                        <p><strong>Account Number:</strong> 8102770927</p>
-                        <p><strong>Bank:</strong> Palmpay</p>
-                        <p><strong>Account Name:</strong> Victoria Okorie</p>
+                        <p><strong>Account Number:</strong> 0476743032</p>
+                        <p><strong>Bank:</strong> Keystone</p>
+                        <p><strong>Account Name:</strong> VIP Beauty Studio</p>
                     </div>
 
                     <p className="paid-paragraph">After a successful transfer, click the <strong>"Paid"</strong> button.</p>

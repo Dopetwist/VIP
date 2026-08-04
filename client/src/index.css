@@ -85,7 +85,7 @@ section {
 }
 
 .logo-section figure {
-    width: 5rem;
+    width: 4rem;
     margin-bottom: 0.5rem;
 }
 
@@ -96,7 +96,7 @@ section {
 
 .logo-section p {
     font-family: var(--font-inter);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
 }
 
@@ -126,11 +126,6 @@ section {
 .nav-icons .nav-icon:hover {
     cursor: pointer;
     color: var(--luxury-gold);
-}
-
-#nav-book-btn {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .nav-links {
@@ -930,7 +925,7 @@ footer p,
 }
 
 .footer-logo figure {
-    width: 8rem;
+    width: 6rem;
 }
 
 .footer-logo figure img {
@@ -3726,6 +3721,7 @@ footer p,
     }
 
     .navbar.open {
+        flex-direction: column;
         padding: 2rem;
         opacity: 1;
         visibility: visible;
@@ -4272,8 +4268,6 @@ footer p,
 
     #nav-book-btn {
         width: 100%;
-        visibility: visible;
-        opacity: 1;
         margin-top: 1rem;
     }
 
@@ -4291,6 +4285,7 @@ footer p,
     }
 
     .navbar.open {
+        flex-direction: column;
         padding: 2rem 1rem;
         opacity: 1;
         visibility: visible;

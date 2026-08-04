@@ -36,17 +36,19 @@ function Navbar({ isOpen = false, onLinkClick }) {
                 ))}
             </div>
 
-            <button 
-            id="nav-book-btn"
-            className="book-button"
-            onClick={() => {
-                clearBooking();
-                onLinkClick();
-                navigate("/book");
-            }}
-            >
-                Book Now
-            </button>
+            {isOpen && (
+                <button 
+                id="nav-book-btn"
+                className="book-button"
+                onClick={() => {
+                    clearBooking();
+                    onLinkClick();
+                    navigate("/book");
+                }}
+                >
+                    Book Now
+                </button>
+            )}
         </nav>
     );
 }
