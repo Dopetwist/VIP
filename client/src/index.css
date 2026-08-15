@@ -4724,12 +4724,16 @@ footer p,
     }
 
     .cart-content {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
     .cart-summary {
         padding: 1.2rem;
+    }
+
+    .continue-shopping-link {
+        display: none;
     }
 
     .item-total,
